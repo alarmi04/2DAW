@@ -6,7 +6,7 @@
     <title>Tecnologias HTML</title>
   </head>
   <body>
-    <?php include "../PHP-Ejercicios/Ejercicio01/cabecera.inc.php"; ?>
+    <?php include "./cabecera.inc.php"; ?>
     <section>
       <p>Las tecnologías web que he usado:</p>
       <ul>

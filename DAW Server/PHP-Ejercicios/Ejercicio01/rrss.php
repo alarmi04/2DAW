@@ -6,7 +6,7 @@
     <title>Rrss HTML</title>
   </head>
   <body>
-    <?php include "../PHP-Ejercicios/Ejercicio01/cabecera.inc.php"; ?>
+    <?php include "./cabecera.inc.php"; ?>
     <section>
       <h2>Mis redes sociales</h2>
       <p>
