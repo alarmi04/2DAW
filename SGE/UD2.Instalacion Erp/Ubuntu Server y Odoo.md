@@ -28,4 +28,10 @@ Esto devuelve "noble" por lo que significa que estamos en "Ubuntu Noble 24.04 (L
 
 Como estoy teniendo el problema de copiar los comanso a mano, instalo un "ssh server" con:
 `apt install openssh-server`
-Para poder conectar la maquina virtual con mi maquina fisica.
+Para poder conectar la maquina virtual con mi maquina física.
+
+Al conectar la maquina virtual con la maquina física con:
+`ssh usuario@IP` desde la maquina física, me da error ya que tengo conectada la maquina virtual a internet por NAT.
+Para solucionarlo voy crear una regla en el reenvio de puertos.
+Despues de realizar esto, me conecto a la maquina virtual desde el CMD usando el siguiente comando:
+`ssh usuario@localhost -p puerto` indicando el puerto que he establecido en la regla de reenvio de puertos.
