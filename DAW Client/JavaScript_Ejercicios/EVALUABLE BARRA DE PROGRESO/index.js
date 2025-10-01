@@ -4,16 +4,16 @@ const barraFront = document.querySelector(".barraFront");
 let intervalo;
 
 function actualizarBarra() {
-    if (acu >= 100) {
-        clearInterval(intervalo); 
-        return;
-    }
-    acu++;
-    contador.textContent = `${acu}%`;
-    barraFront.style.width = `${acu}%`;
+  if (acu >= 100) {
+    clearInterval(intervalo);
+    return;
+  }
+  acu++;
+  contador.textContent = `${acu}%`;
+  barraFront.style.width = `${acu}%`;
 }
 
 function iniciarBarra() {
-    actualizarBarra();
-    intervalo = setInterval(actualizarBarra, 100)
+  actualizarBarra();
+  intervalo = setInterval(actualizarBarra, 100);
 }
