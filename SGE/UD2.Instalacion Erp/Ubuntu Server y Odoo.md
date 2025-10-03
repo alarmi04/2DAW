@@ -35,3 +35,14 @@ Al conectar la maquina virtual con la maquina física con:
 Para solucionarlo voy crear una regla en el reenvio de puertos.
 Despues de realizar esto, me conecto a la maquina virtual desde el CMD usando el siguiente comando:
 `ssh usuario@localhost -p puerto` indicando el puerto que he establecido en la regla de reenvio de puertos.
+
+Ahora con NAT me da problemas para hacer los pasos de instalacion en este caso este:
+`echo \ 
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] 
+https://download.docker.com/linux/ubuntu \ 
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \ 
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 
+sudo apt-get update `
+Para evitar los problemas he decidido volver a intentar usar adaptador puente pero esta vez usando mis datos móviles y ha funcionado, es decir, el problema era del wifi del colegio ya que con el wifi del colegio no me generaba una IP.
+
+Una vez este instalado docker y Odoo procedo a iniciar los contenedores de "odoo-db" y "odoo-web" para poder acceder a Odoo desde el navegador usando el puerto "8069" y usando la ip.
