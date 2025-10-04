@@ -4,7 +4,11 @@ function mostrarReloj() {
   const hoy = new Date();
   // Cojo el div con id "hora" del DOM para añadirle el string con la hora con "text.context".
   const reloj = document.querySelector("#hora");
-  reloj.textContent = hoy.toLocaleTimeString("es-ES");
+  reloj.textContent = hoy.toLocaleTimeString("es-ES", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
   // Con parenElement le digo que se vaya quitando y añadiendo la clase "animar" del CSS.
   reloj.parentElement.classList.toggle("animar");
 
