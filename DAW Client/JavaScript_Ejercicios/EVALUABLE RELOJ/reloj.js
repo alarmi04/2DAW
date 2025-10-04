@@ -4,6 +4,7 @@ function mostrarReloj() {
   const hoy = new Date();
   // Cojo el div con id "hora" del DOM para añadirle el string con la hora con "text.context".
   const reloj = document.querySelector("#hora");
+  // A la hora que añado al div, le pongo que salga la informacion con dos digitos.
   reloj.textContent = hoy.toLocaleTimeString("es-ES", {
     hour: "2-digit",
     minute: "2-digit",
