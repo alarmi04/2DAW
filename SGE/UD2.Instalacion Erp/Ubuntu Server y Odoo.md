@@ -31,10 +31,10 @@ Como estoy teniendo el problema de copiar los comanso a mano, instalo un "ssh se
 Para poder conectar la maquina virtual con mi maquina física.
 
 Al conectar la maquina virtual con la maquina física con:
-`ssh usuario@IP` desde la maquina física, me da error ya que tengo conectada la maquina virtual a internet por NAT.
+`ssh vboxuser@172.10.20.3` desde la maquina física, me da error ya que tengo conectada la maquina virtual a internet por NAT.
 Para solucionarlo voy crear una regla en el reenvio de puertos.
 Despues de realizar esto, me conecto a la maquina virtual desde el CMD usando el siguiente comando:
-`ssh usuario@localhost -p puerto` indicando el puerto que he establecido en la regla de reenvio de puertos.
+`ssh usuario@localhost -p 2222` indicando el puerto que he establecido en la regla de reenvio de puertos.
 
 Ahora con NAT me da problemas para hacer los pasos de instalacion en este caso este:
 `echo \ 
@@ -46,3 +46,5 @@ sudo apt-get update `
 Para evitar los problemas he decidido volver a intentar usar adaptador puente pero esta vez usando mis datos móviles y ha funcionado, es decir, el problema era del wifi del colegio ya que con el wifi del colegio no me generaba una IP.
 
 Una vez este instalado docker y Odoo procedo a iniciar los contenedores de "odoo-db" y "odoo-web" para poder acceder a Odoo desde el navegador usando el puerto "8069" y usando la ip.
+
+Una vvez accedido desde el navegador a Odoo nos pedira una serie de datos, en correo electónico ibamos a usar "Ethereal email" pero debido a un mal uso de usuario lo han capado por lo que el profesor nos va a proporcionar una cuenta de gmail.
