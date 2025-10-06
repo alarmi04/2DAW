@@ -31,7 +31,7 @@ Como estoy teniendo el problema de copiar los comanso a mano, instalo un "ssh se
 Para poder conectar la maquina virtual con mi maquina física.
 
 Al conectar la maquina virtual con la maquina física con:
-`ssh vboxuser@172.10.20.3` desde la maquina física, me da error ya que tengo conectada la maquina virtual a internet por NAT.
+`ssh vboxuser@172.20.10.3` desde la maquina física, me da error ya que tengo conectada la maquina virtual a internet por NAT.
 Para solucionarlo voy crear una regla en el reenvio de puertos.
 Despues de realizar esto, me conecto a la maquina virtual desde el CMD usando el siguiente comando:
 `ssh usuario@localhost -p 2222` indicando el puerto que he establecido en la regla de reenvio de puertos.
@@ -45,6 +45,30 @@ https://download.docker.com/linux/ubuntu \
 sudo apt-get update `
 Para evitar los problemas he decidido volver a intentar usar adaptador puente pero esta vez usando mis datos móviles y ha funcionado, es decir, el problema era del wifi del colegio ya que con el wifi del colegio no me generaba una IP.
 
-Una vez este instalado docker y Odoo procedo a iniciar los contenedores de "odoo-db" y "odoo-web" para poder acceder a Odoo desde el navegador usando el puerto "8069" y usando la ip.
+Una vez este instalado docker y Odoo procedo a iniciar los contenedores de "odoo-db" y "odoo-web" para poder acceder a Odoo desde el navegador usando el puerto "8069" y usando la ip de la máquina en este caso "172.20.10.3".
 
-Una vvez accedido desde el navegador a Odoo nos pedira una serie de datos, en correo electónico ibamos a usar "Ethereal email" pero debido a un mal uso de usuario lo han capado por lo que el profesor nos va a proporcionar una cuenta de gmail.
+Una vez accedido desde el navegador a Odoo nos pedira una serie de datos, en correo electónico ibamos a usar "Ethereal email" pero debido a un mal uso de usuario lo han capado por lo que el profesor nos va a proporcionar una cuenta de gmail.
+
+Al acceder a Odoo desde el navegador nos pide que introduzcamos los cmapos siguientes:
+- Nombre de la Base de datos.
+- Correo electrónico.
+- Contraseña.
+- Número de télefono.
+- Ubicación.
+
+Ahora que hemos rellenado los datos y hemos accedido a Odoo, procedemos a instalar el apartado de ventas, inventario, stock disallow negative.
+
+Una vez instaladas las aplicaciones, accedemos a ajustes, usuarios y empresas y creamos los siguientes usuarios y empleados:
+## Responsables:
+
+### En ventas:
+- Julia García López
+
+### Compras:
+- Juan Torres Ruiz
+
+### Almacén:
+- Tatiana Martínez Sanz
+
+### Administración:
+- Vicent Giménez Vidal
