@@ -59,16 +59,41 @@ Al acceder a Odoo desde el navegador nos pide que introduzcamos los cmapos sigui
 Ahora que hemos rellenado los datos y hemos accedido a Odoo, procedemos a instalar el apartado de ventas, inventario, stock disallow negative.
 
 Una vez instaladas las aplicaciones, accedemos a ajustes, usuarios y empresas y creamos los siguientes usuarios y empleados:
+
 ## Responsables:
 
 ### En ventas:
-- Julia García López
+- Julia García López: 
+    - Correo: juliagarcialopez@gmail.com
 
 ### Compras:
-- Juan Torres Ruiz
+- Juan Torres Ruiz:
+    - Correo: juantorresruiz@gmail.com
 
 ### Almacén:
-- Tatiana Martínez Sanz
+- Tatiana Martínez Sanz:
+    - Correo: tatianamartinezsanz@gmail.com
 
 ### Administración:
-- Vicent Giménez Vidal
+- Vicent Giménez Vidal:
+    - Correo: vicentgimenezvidal@gmail.com
+
+### Gerente:
+- Manuel García Belmonte:
+    - Correo: manuel@theinkgarage.com
+
+## Comprobación del correo
+Ahora procedemos a hacer la comprobación de que nuestro correo funciona en está página:
+- https://webmail.theinkgarage.com/cpsess2590805471/3rdparty/roundcube/?_task=mail&_mbox=INBOX
+
+Básicamente para ver los correos que llegan, etc.
+Para ello usamos las siguientes credneciales:
+- Correo: apptorrent@theinkgarage.com
+- Clave: PerenxisaAPP.
+
+Una vez ya comprobado el correo y agregado las aplicaciones necesarias a Odoo, habrá que comenzar a tratar con proveedores, generar pedidos, generar productos, etc.
+
+## Proveedores
+Para dar de alta a un proveedor accederemos a "Pedidos -> Proveedores -> Nuevo" y aqui introducimos el nombre de la empresa, en este caso "PatoComponentes" y su correo "psvsolis@gmaill.com" y le damos a guardar.
+
+El proveedor nos envia un pedido con los articulos a añadir en nuestro Odoo.
