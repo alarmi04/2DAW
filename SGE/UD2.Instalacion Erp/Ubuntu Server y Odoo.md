@@ -97,3 +97,10 @@ Una vez ya comprobado el correo y agregado las aplicaciones necesarias a Odoo, h
 Para dar de alta a un proveedor accederemos a "Pedidos -> Proveedores -> Nuevo" y aqui introducimos el nombre de la empresa, en este caso "PatoComponentes" y su correo "psvsolis@gmaill.com" y le damos a guardar.
 
 El proveedor nos envia un pedido con los articulos a añadir en nuestro Odoo.
+
+## Compartir los volúmenes
+Ahora para que el profesor se pueda descargar nuestro Odoo con la configuración, clonamos el repositorio en una carpeta en la maquina virtual usando:
+`git clone https://github.com/alarmi04/2DAW.git`
+Una vez creado procedemos con los siguienes pasos:
+1. Crear una rama local desde la rama del gitHub usando: `git checkout -b sistemas_gestion_empresarial origin/sistemas_gestion_empresarial`
+2. Entrar en la rama con: `git switch sistemas_gestion_empresarial`
