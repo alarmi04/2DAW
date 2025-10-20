@@ -104,3 +104,20 @@ Ahora para que el profesor se pueda descargar nuestro Odoo con la configuración
 Una vez creado procedemos con los siguienes pasos:
 1. Crear una rama local desde la rama del gitHub usando: `git checkout -b sistemas_gestion_empresarial origin/sistemas_gestion_empresarial`
 2. Entrar en la rama con: `git switch sistemas_gestion_empresarial`
+3. Hacer un `git add *` con los volumenes y realizar un commit y un push.
+4. Tambien necesita un backup.tar que hemos creado, pero a la hora de commitear este fichero da un error de espacio, es mayor de 100 Mb.
+
+Para solucionar ese problema em instalo en el CMD rclone, y lo configuro con los siguientes pasos:
+1. Escribe n para crear una nueva configuración.
+2. Ponle un nombre (por ejemplo, gdrive).
+3. Selecciona el número correspondiente a Google Drive.
+4. Cuando te pida el client_id y client_secret, puedes dejarlos vacíos (usa los predeterminados).
+5. En scope, elige 1 (acceso completo).
+6. Cuando pregunte si quieres configuración avanzada, di no.
+7. Cuando pregunte si quieres usar auto-config, si estás en un servidor sin interfaz gráfica, di no.
+    - Te mostrará una URL.
+    - Copia esa URL, pégala en tu navegador local, autoriza tu cuenta de Google, y pega el código que te da en el servidor.
+8. Confirma y guarda la configuración.
+
+Y subo el archivo usando este comando:
+`rclone copy -P /home/vboxuser/2DAW/2DAW/SGE/backup.tar gdrive:/Backups`
