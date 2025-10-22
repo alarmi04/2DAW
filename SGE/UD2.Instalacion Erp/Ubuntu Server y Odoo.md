@@ -108,6 +108,9 @@ Una vez creado procedemos con los siguienes pasos:
 4. Tambien necesita un backup.tar que hemos creado, pero a la hora de commitear este fichero da un error de espacio, es mayor de 100 Mb.
 
 Para solucionar ese problema em instalo en el CMD rclone, y lo configuro con los siguientes pasos:
+
+Para instalar rclone: `sudo apt update sudo apt install rclone -y`
+Para entrar en la configuracion: `rclone config`, una vez entrado seguiremos los pasos siguientes:
 1. Escribe n para crear una nueva configuración.
 2. Ponle un nombre (por ejemplo, gdrive).
 3. Selecciona el número correspondiente a Google Drive.
@@ -121,3 +124,8 @@ Para solucionar ese problema em instalo en el CMD rclone, y lo configuro con los
 
 Y subo el archivo usando este comando:
 `rclone copy -P /home/vboxuser/2DAW/2DAW/SGE/backup.tar gdrive:/Backups`
+
+## Productos
+
+Ahora despues de iniciar los contenedores en Odoo, procedemos a acceder a la seccion de Inventario/Productos y creamos los productos, los cuales hemos recibido a traves del correo como un pedido:
+![alt text](image.png)
