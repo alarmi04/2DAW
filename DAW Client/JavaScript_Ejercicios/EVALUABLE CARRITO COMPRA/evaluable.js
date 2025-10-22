@@ -5,11 +5,16 @@ const contenidoCarrito = document.querySelector("#lista-carrito tbody");
 const infoCursos = document.querySelectorAll(".info-card");
 // Declaro dos arrays para almacenar los cursos totales y los cursos en el carrito.
 const cursos = [];
-const carrito = [];
+// Ahora hago que el carrito sea un array pero que llame primero al localStorage por si tiene informacion.
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Hago un eventListener para que cuando se cargue el DOM no haya cosas desincroniadas.
 document.addEventListener("DOMContentLoaded", (e) => {
   console.log("El DOM está completamente cargado y listo.");
+  // Recorro el carrito para crear la fila de cada curso.
+  carrito.forEach((curso) => {
+    crearCursoDOM(curso);
+  });
 });
 
 // Recorro la informacion de los cursos del DOM y a cada curso le creo un objeto literal.
@@ -46,9 +51,10 @@ btnVaciarCarrito.addEventListener("click", (e) => {
     // Elimino el hijo.
     contenidoCarrito.removeChild(contenidoCarrito.firstChild);
   }
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 });
 
-// Funcion para agregar los cursos a carrito mediante createElement, 
+// Funcion para agregar los cursos a carrito mediante createElement,
 // se podria hacer con innerHTML y sería menos código pero menos escalable.
 function agregarCarrito(btnAgregar) {
   // Recorro los cursos totales.
@@ -62,42 +68,16 @@ function agregarCarrito(btnAgregar) {
         // Si llega aqui significa que ya esta añadido por lo que solo habría que sumar la cantidad.
         const fila = contenidoCarrito.querySelector(`#fila${curso.id}`);
         fila.querySelector(".cantidad").textContent++;
+        const cursoExistente = carrito.find((item) => item.id === curso.id);
+        cursoExistente.cantidad++;
+        localStorage.setItem("carrito", JSON.stringify(carrito));
       } else {
         // Si no se cumple que este ya en el carrito.
         // Se añade al array de carrito.
         carrito.push(curso);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
         // Se crea todo el contenido de tbody con createElement.
-        const fila = document.createElement("tr");
-        fila.id = "fila" + curso.id;
-        contenidoCarrito.appendChild(fila);
-        const celda = document.createElement("td");
-        const imagen = document.createElement("img");
-        imagen.src = curso.imagen;
-        imagen.style.width = "100px";
-        celda.appendChild(imagen);
-        fila.appendChild(celda);
-        const celdaTitulo = document.createElement("td");
-        celdaTitulo.textContent = curso.titulo;
-        fila.appendChild(celdaTitulo);
-        const celdaPrecio = document.createElement("td");
-        celdaPrecio.textContent = curso.precio;
-        fila.appendChild(celdaPrecio);
-        const celdaCantidad = document.createElement("td");
-        celdaCantidad.classList.add("cantidad");
-        celdaCantidad.textContent = curso.cantidad;
-        fila.appendChild(celdaCantidad);
-        
-        // Creo la celda de borrar curso a la que le añadire el enlace.
-        const celdaBorrarCurso = document.createElement("td");
-        const btnBorrarCurso = document.createElement("a");
-        // Le añado la clase del css.
-        btnBorrarCurso.classList.add("borrar-curso");
-        btnBorrarCurso.href = "#";
-        btnBorrarCurso.textContent = "X";
-        celdaBorrarCurso.appendChild(btnBorrarCurso);
-        fila.appendChild(celdaBorrarCurso);
-        // Llamo a la función para borrar el curso, le paso el boton u el curso que se esta recorriendo.
-        borrarCurso(btnBorrarCurso, curso);
+        crearCursoDOM(curso);
       }
     }
   });
@@ -110,10 +90,54 @@ function borrarCurso(btnBorrarCurso, curso) {
   // por lo que va a ser siempre igual.
   btnBorrarCurso.addEventListener("click", (e) => {
     e.preventDefault();
-      const indexCurso = carrito.findIndex((item) => item.id === curso.id);
-      carrito.splice(indexCurso, 1);
-      contenidoCarrito.removeChild(
-        contenidoCarrito.querySelector(`#fila${curso.id}`)
-      );
+    const indexCurso = carrito.findIndex((item) => item.id === curso.id);
+    carrito.splice(indexCurso, 1);
+    contenidoCarrito.removeChild(
+      contenidoCarrito.querySelector(`#fila${curso.id}`)
+    );
+    localStorage.setItem("carrito", JSON.stringify(carrito));
   });
+}
+
+// Creo esta funcion para no duplicar el codigo para crear el Curso en el DOM, y poder usarlo tanto al añaidrlo
+// como al cargar la página.
+function crearCursoDOM(curso) {
+  // Creo la fila en el DOM
+  const fila = document.createElement("tr");
+  // Le pongo a la fila el id para luego poder sumar la cantidad más fácil.
+  fila.id = "fila" + curso.id;
+  // Añado al conteniddo del carrito la fila en el DOM.
+  contenidoCarrito.appendChild(fila);
+  // Creo la celda para la imagen, le pongo estilos y añado la imagen a su celda para luego añadirla a la fila del DOM.
+  const celda = document.createElement("td");
+  const imagen = document.createElement("img");
+  imagen.src = curso.imagen;
+  imagen.style.width = "100px";
+  celda.appendChild(imagen);
+  fila.appendChild(celda);
+  // Hago lo mismo para el titulo.
+  const celdaTitulo = document.createElement("td");
+  celdaTitulo.textContent = curso.titulo;
+  fila.appendChild(celdaTitulo);
+  // Hago lo mismo para el precio.
+  const celdaPrecio = document.createElement("td");
+  celdaPrecio.textContent = curso.precio;
+  fila.appendChild(celdaPrecio);
+  // Y lo mismo para la cantidad, es decir, les hago su celda para mostrar la información
+  const celdaCantidad = document.createElement("td");
+  celdaCantidad.classList.add("cantidad");
+  celdaCantidad.textContent = curso.cantidad;
+  fila.appendChild(celdaCantidad);
+
+  // Creo una celda para hacer un boton que al cliclar borre el curso sobre el que haya clicado la X.
+  const celdaBorrarCurso = document.createElement("td");
+  const btnBorrarCurso = document.createElement("a");
+  btnBorrarCurso.classList.add("borrar-curso");
+  btnBorrarCurso.href = "#";
+  btnBorrarCurso.textContent = "X";
+  celdaBorrarCurso.appendChild(btnBorrarCurso);
+  fila.appendChild(celdaBorrarCurso);
+
+  // Llamo al a funcion para crear el eventListener del boton, para borrarlo cuando se clique.
+  borrarCurso(btnBorrarCurso, curso);
 }
