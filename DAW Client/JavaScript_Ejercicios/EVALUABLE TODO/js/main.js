@@ -6,18 +6,24 @@ let error = "";
 
 document.addEventListener("DOMContentLoaded", (e) => {
   console.log("DOM cargado correctamente");
+  tareas.forEach((tarea) => {
+    mostrarTarea(tarea);
+  });
 });
 
 btnAgregar.addEventListener("click", (e) => {
   e.preventDefault();
   const mensaje = formulario.querySelector("#tarea").value;
   if (!validarMensaje(mensaje)) {
-    if (document.querySelector("#alerta")) document.querySelector("#alerta").remove();
-      const alerta = crearAlerta(mensaje, error);
-      container.appendChild(alerta);
-      setTimeout(function () {
-        alerta.remove();
-      }, 3000);
+    if (document.querySelector("#alerta"))
+      document.querySelector("#alerta").remove();
+    const alerta = crearAlerta(mensaje, error);
+    container.appendChild(alerta);
+    setTimeout(function () {
+      alerta.remove();
+    }, 3000);
+  } else {
+    agregarTarea(mensaje);
   }
 });
 
@@ -29,7 +35,7 @@ function validarMensaje(mensaje) {
     case mensaje.length > 30:
       error = "max";
       return false;
-    case tareas.find((item) => item === mensaje):
+    case tareas.includes(mensaje):
       error = "repe";
       return false;
   }
@@ -47,11 +53,15 @@ function crearAlerta(mensaje, error) {
   return alerta;
 }
 
-function agregarTarea() {
+function mostrarTarea(mensaje) {
   const lista = document.querySelector("#lista-tareas");
-  tareas.forEach(tarea => {
-      const tarea = document.createElement('p');
-  tarea.textContent = 
-  });
+  const tareaDOM = document.createElement("p");
+  tareaDOM.textContent = mensaje;
+  lista.appendChild(tareaDOM);
+}
 
+function agregarTarea(mensaje) {
+  mostrarTarea(mensaje);
+  tareas.push(mensaje);
+  localStorage.setItem("tareas", JSON.stringify(tareas));
 }
