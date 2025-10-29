@@ -1,7 +1,8 @@
 <?php
+session_start(); 
 
 echo '<header>';
-echo '<a href="./registro.php">Cierra sesion</a>';
+echo '<a href="./cerrarsesion.php">Cerrar sesión</a>';
 echo '</header>';
 
 ?>

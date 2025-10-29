@@ -1,4 +1,6 @@
 <?php
+require_once './verificarsesion.php';
+
 require_once "./header.inc.php";
 
 try {

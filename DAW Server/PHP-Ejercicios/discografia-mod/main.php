@@ -1,4 +1,5 @@
 <?php
+require_once './verificarsesion.php';
 require_once "./header.inc.php";
 try {
     $dwes = new PDO('mysql:host=localhost;dbname=discografia', 'discografia', 'discografia');
