@@ -51,8 +51,8 @@ Una vez accedido desde el navegador a Odoo nos pedira una serie de datos, en cor
 
 Al acceder a Odoo desde el navegador nos pide que introduzcamos los cmapos siguientes:
 - Nombre de la Base de datos.
-- Correo electrónico.
-- Contraseña.
+- Correo electrónico. (apptorrent@theinkgarage.com)
+- Contraseña. (ara180604)
 - Número de télefono.
 - Ubicación.
 
@@ -129,3 +129,14 @@ Y subo el archivo usando este comando:
 
 Ahora despues de iniciar los contenedores en Odoo, procedemos a acceder a la seccion de Inventario/Productos y creamos los productos, los cuales hemos recibido a traves del correo como un pedido:
 ![alt text](image.png)
+
+
+## Nuevo correo asociado
+
+Para asignar a Odoo otro correo lo que vamos a hacer es lo siguiente:
+    1. Conectarnos a la máquina por ssh, `ssh vboxuser@ip`.
+    2. Activar los contenedores estando en el directorio del "docker-compose.yml" con `docker compose up -d` -d para dejarlo en segundo plano y poder usar la terminal.
+    3. Accedo a Odoo desde el navegador poniendo la IP:8069
+    4. Una vez en Odoo.
+    5. Accedemos a ajustes y cambiamos el correo de la empresa y del usuario administrador a "apptorrent@odooserra.work.gd"
+    6. Creamos un correo saliente y uno entrante.
