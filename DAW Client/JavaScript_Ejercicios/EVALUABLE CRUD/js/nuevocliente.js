@@ -14,9 +14,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
 // Le agrego un eventListener al boton que al clicar, según las validaciones agregue o no al cliente.
 btnAgregar.addEventListener("click", (e) => {
   e.preventDefault();
+  // Si la alerta esta creada, la elimino para que no se duplique.
   const alerta = document.querySelector("#alerta-error");
   if (alerta) alerta.remove();
 
+  // Si no se validan los datos lanzo la alerta.
   if (!validarDatos()) {
     const alertaDOM = document.createElement("p");
     alertaDOM.classList.add(
@@ -34,6 +36,10 @@ btnAgregar.addEventListener("click", (e) => {
     alertaDOM.textContent = "Error! Todos los campos son obligatorios";
     alertaDOM.id = "alerta-error";
     formulario.parentElement.appendChild(alertaDOM);
+    // La borro a los 3 segundos.
+    setTimeout(function() {
+      alertaDOM.remove();
+    }, 3000)
   } else {
     agregarCliente({
       nombre: nombre.value,
@@ -45,6 +51,7 @@ btnAgregar.addEventListener("click", (e) => {
   }
 });
 
+// Función para validar si los datos estan vacíos o no.
 function validarDatos() {
   if (
     nombre.value === "" ||
@@ -56,9 +63,11 @@ function validarDatos() {
   return true;
 }
 
+// Función asyncrona paara agregar el cliente.
 async function agregarCliente(cliente) {
   const url = "http://localhost:4000/clientes";
   try {
+    // Hago un POST para crear el cliente.
     const respuesta = await fetch(url, {
       method: "POST",
       body: JSON.stringify(cliente),
@@ -66,10 +75,12 @@ async function agregarCliente(cliente) {
         "Content-Type": "application/json",
       },
     });
+    // Si la respuesta es erronea lanzo un error.
     if (!respuesta.ok) throw new Error("Error");
     const post = await respuesta.json();
     console.log("POST creado: " + post);
   } catch (error) {
+    // Si hay algun error con la base de datos se lanza la alerta.
     const alertaDOM = document.createElement("p");
     alertaDOM.classList.add(
       "bg-red-100",
@@ -86,5 +97,9 @@ async function agregarCliente(cliente) {
     alertaDOM.textContent = "Error! Fallo al conectar con la base de datos.";
     alertaDOM.id = "alerta-error";
     formulario.parentElement.appendChild(alertaDOM);
+    // La borro a los 3 segundos.
+    setTimeout(function() {
+      document.querySelector("#alerta-error").remove();
+    })
   }
 }

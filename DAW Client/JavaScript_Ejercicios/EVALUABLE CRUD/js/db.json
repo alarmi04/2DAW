@@ -13,27 +13,6 @@
       "telefono": "111111111",
       "empresa": "IES La Marxadella",
       "id": "5"
-    },
-    {
-      "id": "88a8",
-      "nombre": "Jose",
-      "email": "jose@gmail.com",
-      "telefono": "645960921",
-      "empresa": "EDICOM"
-    },
-    {
-      "id": "f353",
-      "nombre": "Alberto",
-      "email": "albertoaracilmillan@gmail.com",
-      "telefono": "640850831",
-      "empresa": "Ninguna"
-    },
-    {
-      "id": "ec7d",
-      "nombre": "Elizabeth Lopez Perucho",
-      "email": "elilopper03@gmail.com",
-      "telefono": "659837532",
-      "empresa": "Ninguna"
     }
   ]
 }

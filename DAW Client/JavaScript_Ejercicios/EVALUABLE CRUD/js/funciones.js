@@ -1,1 +1,0 @@
-//funciones generales que pueden servir para varios ficheros
