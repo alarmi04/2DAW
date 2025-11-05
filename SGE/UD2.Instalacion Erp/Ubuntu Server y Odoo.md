@@ -102,10 +102,10 @@ El proveedor nos envia un pedido con los articulos a añadir en nuestro Odoo.
 Ahora para que el profesor se pueda descargar nuestro Odoo con la configuración, clonamos el repositorio en una carpeta en la maquina virtual usando:
 `git clone https://github.com/alarmi04/2DAW.git`
 Una vez creado procedemos con los siguienes pasos:
-1. Crear una rama local desde la rama del gitHub usando: `git checkout -b sistemas_gestion_empresarial origin/sistemas_gestion_empresarial`
-2. Entrar en la rama con: `git switch sistemas_gestion_empresarial`
+1. Entrar en la rama con: `git switch sistemas_gestion_empresarial`
+2. Mover los volumenes a la carpeta del repositorio.
 3. Hacer un `git add *` con los volumenes y realizar un commit y un push.
-4. Tambien necesita un backup.tar que hemos creado, pero a la hora de commitear este fichero da un error de espacio, es mayor de 100 Mb.
+4. Tambien necesita un backup.tar que hemos creado con `tar -cvf nombre_archivo.tar carpeta_o_archivo`, pero a la hora de commitear este fichero da un error de espacio, es mayor de 100 Mb.
 
 Para solucionar ese problema em instalo en el CMD rclone, y lo configuro con los siguientes pasos:
 
@@ -140,3 +140,16 @@ Para asignar a Odoo otro correo lo que vamos a hacer es lo siguiente:
     4. Una vez en Odoo.
     5. Accedemos a ajustes y cambiamos el correo de la empresa y del usuario administrador a "apptorrent@odooserra.work.gd"
     6. Creamos un correo saliente y uno entrante.
+
+
+## Asignar prefijos.
+
+Para asignar los prefijos a los presupuesto, facturas... Accederemos al modo desarrollador que esta al final del todo en ajustes.
+1. Una vez activado, arriba en el menú nos saldrá el apartado de técnico.
+2. Accedemos a Técnico.
+3. Y vamos al apartado de secuencias.
+4. Buscamos las necesarias en este caso Purchase.order porque las facturas no dejaba.
+5. Cambiamos el prefijo por "PED-%(y)s-".
+
+## Plantillas de correo.
+
