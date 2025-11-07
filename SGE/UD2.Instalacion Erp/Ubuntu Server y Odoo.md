@@ -153,3 +153,13 @@ Para asignar los prefijos a los presupuesto, facturas... Accederemos al modo des
 
 ## Plantillas de correo.
 
+Para crear una plantilla de correo realizaremos los siguientes pasos:
+    1. Se pone en modo desarrollador 
+    2. Accedemos a plantillas de correo
+    3. Creamos una nueva
+        - aplica a : Orden ventas
+        - asunyo : pedido de venta
+    4. Para personalizar el asunto hay que hacerlo en contenido, y que ponerlo igual pero con dos {}, es decir, {{ object.name }}
+    5. Contenido: 
+        - En el mensaje / y entrar en el antepenultimo # (Marcador de posición dinamico) cliente (cliente parner id, nombre) = object.partnner_id.name. 
+        - Recuerda pagarlo antes de: object.payment_term_id.name (para esto hay que ponerle condicion de pago al pedido ) gracias por tu pedido object.name. 
