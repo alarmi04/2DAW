@@ -18,7 +18,7 @@ Una vez subido todo, se realizaran los siguientes pasos:
 2. Clonar el repositorio.
 3. Descargar el tar de drive, al tener interfaz gráfica es más fácil.
 4. Copiar el tar al directorio de volumesOdoo.
-5. Descomprimo el tar.
+5. Descomprimo el tar. `tar -xvf backup.tar`
 6. Vamos al directorio donde este el docker-compose.yml
 7. Hacemos `docker compose up` si ponemos al final -d no se paran los contenedores.
 
