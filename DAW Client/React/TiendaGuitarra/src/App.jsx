@@ -5,11 +5,16 @@ import { db } from "./data/db.js";
 
 function App() {
   // const [ data, setData ] = useState(db);
-  const [ data, setData] = useState([]);
-  
+  const [data, setData] = useState([]);
+  const [carrito, setCarrito] = useState([]);
+
+  function anyadirAlCarrito(guitarraObj) {
+    setCarrito(carrito => [...carrito, guitarraObj]);
+  };
+
   useEffect(() => {
     setData(db);
-  },[])
+  }, []);
 
   return (
     <>
@@ -18,8 +23,14 @@ function App() {
         <h2 className="text-center">Nuestra Colección</h2>
 
         <div className="row mt-5">
-          <Guitarra/>
-        </div>                                                                                              
+          {data.map((element) => (
+            <Guitarra
+              key={element.id}
+              guitarraObj={element}
+              anyadirAlCarrito = {anyadirAlCarrito}
+            />
+          ))}
+        </div>
       </main>
 
       <footer className="bg-dark mt-5 py-5">
