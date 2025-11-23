@@ -8,6 +8,7 @@
     --color-fondo-barra: #C384FA;
     --color-fondo-footer: #FA8684;
     --ancho-total: 980px;
+    --altura-contenido: 500px;
 }
 
 * {
@@ -21,7 +22,7 @@
 
 header {
   background-color: var(--color-fondo-header);
-  width: 100%;
+  width: 100%; /* Para que ocupe el ancho del contenedor padre */
   padding: 20px 0px;
 }
 
@@ -37,22 +38,22 @@ nav {
 }
 
 #content {
-    height: 500px;
+    height: var(--altura-contenido);
     border-bottom: 2px solid var(--color-borde-verde);
 }
 
 #info {
-    display: inline-block;
+    display: inline-block; /* Pongo inline-block para que info y la barra esten en la misma linea pero respetando las medidas del ocntenedor padre.*/
     height: 100%;   
-    line-height: 500px;
+    line-height: var(--altura-contenido);
     background-color: var(--color-fondo-info);
     width: 750px;
 }
 
 #barra-lateral {
-    display: inline-block;
+    display: inline-block; /* Pongo inline-block para que info y la barra esten en la misma linea pero respetando las medidas del ocntenedor padre.*/
     height: 100%;
-    line-height: 500px;
+    line-height: var(--altura-contenido); /*Pongo line-height a los mismos pixeles que la altura para que la linea de texto ocupe lo mismo y se ponga solo en el medio*/
     background-color: var(--color-fondo-barra);
     width: 220px;
     border-left: 10px solid var(--color-borde-verde);

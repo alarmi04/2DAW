@@ -35,7 +35,6 @@ p {
 nav {
     background-color: var(--color-fondo-nav);
     text-align: center;
-    clear: both;
 }
 
 #content {
@@ -44,7 +43,7 @@ nav {
 }
 
 #info {
-    float: left;
+    float: left; /* Hago que flote a la izquierda para luego poner la barra al lado */
     height: 100%;
     line-height: 500px;
     background-color: var(--color-fondo-info);
@@ -52,7 +51,7 @@ nav {
 }
 
 #barra-lateral {
-    float: left;
+    float: left; /* Pongo la barra al lado de la info */
     height: 100%;
     line-height: 500px;
     background-color: var(--color-fondo-barra);
@@ -61,6 +60,6 @@ nav {
 }
 
 footer {
-    clear: both;
+    clear: both; /* Hago que los efectos de float desaparezcan para que se ponga debajo */
     background-color: var(--color-fondo-footer);
 }
