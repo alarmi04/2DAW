@@ -8,17 +8,71 @@ function App() {
   const [data, setData] = useState([]);
   const [carrito, setCarrito] = useState([]);
 
-  function anyadirAlCarrito(guitarraObj) {
-    setCarrito(carrito => [...carrito, guitarraObj]);
-  };
-
   useEffect(() => {
     setData(db);
+    setCarrito(JSON.parse(localStorage.getItem('carrito')));
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }, [carrito]);
+
+  function anyadirAlCarrito(guitarraObj) {
+    const articuloExiste = carrito.findIndex(
+      (element) => guitarraObj.id === element.id
+    );
+    if (articuloExiste >= 0) {
+      // Hay q crear una copia porq React con los estados no re-renderiza hasta q nota una nueva entrada, es decir,
+      // si modificamos el mismo array no lo detecta como una nueva entrada y no se actualiza directamente, solo
+      // re-renderiza cuando detecta un cambio en la referencia del estado.
+
+      // Usamos el spread operator porque sino no se crearia una copia, es decir,
+      // "const copiaCarrito = carrito" trabajaría sobre el original.
+      const copiaCarrito = [...carrito];
+      copiaCarrito[articuloExiste].cantidad++;
+      setCarrito(copiaCarrito);
+    } else {
+      guitarraObj.cantidad = 1;
+      setCarrito((carrito) => [...carrito, guitarraObj]);
+    }
+  }
+
+  function agregarCantidad(id) {
+    const articuloIndex = carrito.findIndex((element) => element.id === id);
+    const copiaCarrito = [...carrito];
+    copiaCarrito[articuloIndex].cantidad++;
+    setCarrito(copiaCarrito);
+  }
+
+  function eliminarCantidad(id) {
+    const articuloIndex = carrito.findIndex((element) => element.id === id);
+    const copiaCarrito = [...carrito];
+    if (copiaCarrito[articuloIndex].cantidad > 0) {
+      copiaCarrito[articuloIndex].cantidad--;
+      setCarrito(copiaCarrito);
+    }
+  }
+
+  function vaciarCarrito() {
+    const copiaCarrito = [...carrito];
+    copiaCarrito.splice(0, copiaCarrito.length);
+    setCarrito(copiaCarrito);
+  }
+
+  function eliminarDelCarrito(id) {
+    const nuevoCarrito = () => carrito.filter((element) => element.id !== id);
+    setCarrito(nuevoCarrito);
+  }
 
   return (
     <>
-      <Header />
+      <Header
+        carrito={carrito}
+        eliminarDelCarrito={eliminarDelCarrito}
+        agregarCantidad={agregarCantidad}
+        eliminarCantidad={eliminarCantidad}
+        vaciarCarrito={vaciarCarrito}
+      />
       <main className="container-xl mt-5">
         <h2 className="text-center">Nuestra Colección</h2>
 
@@ -27,7 +81,7 @@ function App() {
             <Guitarra
               key={element.id}
               guitarraObj={element}
-              anyadirAlCarrito = {anyadirAlCarrito}
+              anyadirAlCarrito={anyadirAlCarrito}
             />
           ))}
         </div>
