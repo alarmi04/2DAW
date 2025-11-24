@@ -134,12 +134,12 @@ Ahora despues de iniciar los contenedores en Odoo, procedemos a acceder a la sec
 ## Nuevo correo asociado
 
 Para asignar a Odoo otro correo lo que vamos a hacer es lo siguiente:
-    1. Conectarnos a la máquina por ssh, `ssh vboxuser@ip`.
-    2. Activar los contenedores estando en el directorio del "docker-compose.yml" con `docker compose up -d` -d para dejarlo en segundo plano y poder usar la terminal.
-    3. Accedo a Odoo desde el navegador poniendo la IP:8069
-    4. Una vez en Odoo.
-    5. Accedemos a ajustes y cambiamos el correo de la empresa y del usuario administrador a "apptorrent@odooserra.work.gd"
-    6. Creamos un correo saliente y uno entrante.
+1. Conectarnos a la máquina por ssh, `ssh vboxuser@ip`.
+2. Activar los contenedores estando en el directorio del "docker-compose.yml" con `docker compose up -d` -d para dejarlo en segundo plano y poder usar la terminal.
+3. Accedo a Odoo desde el navegador poniendo la IP:8069
+4. Una vez en Odoo.
+5. Accedemos a ajustes y cambiamos el correo de la empresa y del usuario administrador a "apptorrent@odooserra.work.gd"
+6. Creamos un correo saliente y uno entrante.
 
 
 ## Asignar prefijos.
