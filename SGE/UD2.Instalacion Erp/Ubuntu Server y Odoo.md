@@ -151,6 +151,8 @@ Para asignar los prefijos a los presupuesto, facturas... Accederemos al modo des
 4. Buscamos las necesarias en este caso Purchase.order porque las facturas no dejaba.
 5. Cambiamos el prefijo por "PED-%(y)s-".
 
+# SEGUNDO TRIMESTRE.
+
 ## Plantillas de correo.
 
 Para crear una plantilla de correo realizaremos los siguientes pasos:
@@ -158,8 +160,37 @@ Para crear una plantilla de correo realizaremos los siguientes pasos:
     2. Accedemos a plantillas de correo
     3. Creamos una nueva
         - aplica a : Orden ventas
-        - asunyo : pedido de venta
-    4. Para personalizar el asunto hay que hacerlo en contenido, y que ponerlo igual pero con dos {}, es decir, {{ object.name }}
+        - asunto : pedido de venta
+    4. Para personalizar el asunto hay que hacerlo en contenido, y que ponerlo igual pero con dos **{}**, es decir, **{{ object.name }}**, además ponemos **"[CUSTOM]"** delante del asunto para distinguir con más facilidad la plantilla.
     5. Contenido: 
-        - En el mensaje / y entrar en el antepenultimo # (Marcador de posición dinamico) cliente (cliente parner id, nombre) = object.partnner_id.name. 
+        - En el mensaje / y entrar en el antepenultimo **#** (Marcador de posición dinamico) **cliente** (cliente parner id, nombre) = object.partnner_id.name. 
         - Recuerda pagarlo antes de: object.payment_term_id.name (para esto hay que ponerle condicion de pago al pedido ) gracias por tu pedido object.name. 
+
+## Automatización de los correos.
+
+Para poder automatizar que se envie por ejemplo un correo de confirmación al crear un pedido hay q hacer lo siguiente:
+    1. Activar el modo desarrollador.
+    2. Acceder a técnico -> acciones -> acciones del servidor -> nuevo
+    3. Le ponemos un nombre a la acción en este caso **"[CUSTOM] Enviar correo electrónico automáticamente en venta"**
+    4. Escogemos el tipo en este caso **"Enviar correo electrónico"**
+    5. En modelo ponemos **"Orden de venta"**
+    6. Esocgemos la plantilla de correo electrónico anteriormente creada **"[CUSTOM] Confirmación pedido de venta automático"**
+    7. Enviar correo electrónico como **"Mensaje"** para que asi se muestre en el historial de la derecha.
+
+Cuando ya hemos configurado lo anterior para poder crear la automatización vamos a **Aplicaciones** y activamos **Reglas de automatización**.
+
+Una vez instalado el módulo hacemos lo siguiente:
+    1. Accedemos a técnico -> Automatización -> Reglas de automatización
+    2. Nuevo.
+    3. Le ponemos un nombre **"[CUSTOM] Envío mail venta automática"**
+    4. Modelo: **Orden de venta**
+    5. Activar: **El estado establecido como** -> **Orden de venta**
+    6. Agregar acción: 
+        - Tipo: Ejectutar acciones existentes.
+        - Detalles de la acción: Agregar -> **"[CUSTOM] Confirmación pedido de venta automático"**
+
+Para comprobar que funciona correctamente vamos a crear un pedido de venta, accediendo a **Venta** -> **Nuevo**.
+
+Y debería de aparecer lo siguiente:
+
+![alt text](image-1.png)
