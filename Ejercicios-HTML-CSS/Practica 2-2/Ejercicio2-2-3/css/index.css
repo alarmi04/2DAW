@@ -1,0 +1,84 @@
+:root {
+  --ancho-total: 980px;
+  --color-titulos: rgb(255, 255, 255);
+  --fuente: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#page {
+  width: var(--ancho-total);
+  margin: 0 auto;
+  height: 85vh;
+}
+
+p {
+  font-family: var(--fuente);
+  color: var(--color-titulos);
+  text-align: center;
+}
+
+header {
+  background-color: rgb(2, 122, 2);
+}
+
+header p {
+  text-transform: uppercase;
+}
+
+header {
+  line-height: 10vh;
+  height: 10vh;
+}
+
+aside {
+  float: left;
+  width: 25%;
+  background-color: rgb(42, 159, 205);
+  height: 100%;
+}
+
+main {
+  float: left;
+  width: 75%;
+  height: 100%;
+  background-color: rgb(202, 38, 202);
+}
+
+footer {
+  clear: both;
+  background-color: rgb(244, 100, 65);
+}
+
+footer p {
+  text-transform: uppercase;
+}
+
+.contenedor {
+  border: 5px solid rgb(255, 0, 0);
+  width: 95%;
+  height: 44%;
+  margin: 2vh 2vh 0vh 2vh;
+}
+
+.mini-contenedor {
+  float: left;
+  width: 44.2%;
+  border: 5px solid rgb(0, 0, 255);
+  height: 75%;
+  margin-top: 4vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.mini-contenedor-2 {
+    float: left;
+    width: 30%;
+    border: 5px solid rgb(0, 0, 255);
+    height: 75%;
+    margin-left: 1%;
+    margin-top: 4%;
+}
