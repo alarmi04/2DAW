@@ -4,7 +4,6 @@
     --color-fondo-header: #fabf84; 
     --color-fondo-nav: #FAEE84;
     --color-fondo-info: #84FAF8;
-    --color-borde-verde: #86FA84;
     --color-fondo-barra: #C384FA;
     --color-fondo-footer: #FA8684;
     --color-fondo-body: #FCFCC7;
@@ -44,7 +43,6 @@ nav {
 
 #content {
     height: var(--altura-contenido);
-    border-bottom: 2px solid var(--color-borde-verde);
 }
 
 #info {
@@ -60,8 +58,7 @@ nav {
     height: 100%;
     line-height: var(--altura-contenido); /*Pongo line-height a los mismos pixeles que la altura para que la linea de texto ocupe lo mismo y se ponga solo en el medio*/
     background-color: var(--color-fondo-barra);
-    width: 220px;
-    border-left: 10px solid var(--color-borde-verde);
+    width: 230px;
 }
 
 footer {

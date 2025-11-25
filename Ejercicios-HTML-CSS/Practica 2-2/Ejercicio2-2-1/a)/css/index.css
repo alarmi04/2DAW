@@ -4,7 +4,6 @@
   --color-fondo-header: #fabf84;
   --color-fondo-nav: #faee84;
   --color-fondo-info: #84faf8;
-  --color-borde-verde: #86fa84;
   --color-fondo-barra: #c384fa;
   --color-fondo-footer: #fa8684;
   --color-fondo-body: #fcfcc7;
@@ -44,7 +43,6 @@ nav {
 
 #content {
   height: 500px;
-  border-bottom: 2px solid var(--color-borde-verde);
 }
 
 #info {
@@ -60,8 +58,7 @@ nav {
   height: 100%;
   line-height: 500px;
   background-color: var(--color-fondo-barra);
-  width: 220px;
-  border-left: 10px solid var(--color-borde-verde);
+  width: 230px;
 }
 
 footer {
