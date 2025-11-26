@@ -156,10 +156,10 @@ Para asignar los prefijos a los presupuesto, facturas... Accederemos al modo des
 ## Plantillas de correo.
 
 Para crear una plantilla de correo realizaremos los siguientes pasos:
-    1. Se pone en modo desarrollador 
-    2. Accedemos a plantillas de correo
-    3. Creamos una nueva
-        - aplica a : Orden ventas
+1. Se pone en modo desarrollador 
+2. Accedemos a plantillas de correo
+3. Creamos una nueva
+- aplica a : Orden ventas
         - asunto : pedido de venta
     4. Para personalizar el asunto hay que hacerlo en contenido, y que ponerlo igual pero con dos **{}**, es decir, **{{ object.name }}**, además ponemos **"[CUSTOM]"** delante del asunto para distinguir con más facilidad la plantilla.
     5. Contenido: 
@@ -186,8 +186,8 @@ Una vez instalado el módulo hacemos lo siguiente:
 4. Modelo: **Orden de venta**
 5. Activar: **El estado establecido como** -> **Orden de venta**
 6. Agregar acción: 
-- Tipo: Ejectutar acciones existentes.
-- Detalles de la acción: Agregar -> **"[CUSTOM] Confirmación pedido de venta automático"**
+    - Tipo: Ejectutar acciones existentes.
+    - Detalles de la acción: Agregar -> **"[CUSTOM] Confirmación pedido de venta automático"**
 
 Para comprobar que funciona correctamente vamos a crear un pedido de venta, accediendo a **Venta** -> **Nuevo**.
 
