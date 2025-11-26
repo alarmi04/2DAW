@@ -196,7 +196,7 @@ Y debería de aparecer lo siguiente:
 ![alt text](image-1.png)
 
 
-### Configuración de otra automatización.
+### Configuración de otra plantilla de correo.
 
 El primer paso será activar el modo desarrollador, a continuación en el menú superior accederemos a **"Técnico"** -> **"Correo electrónico"** -> **"Plantillsa de correo electrónico"**.
 
@@ -204,5 +204,15 @@ Una vez aquí, procederemos a la creación de una plantilla de correo para cuand
 
 1. Clicaremos en **Nuevo**.
 2. Le pondremos el siguiente nombre: **"[CUSTOM] Cancelación de pedido"**
-3. Aplica a -> **Cancelar orden de venta**
-4. Asunto ->   
+3. Aplica a -> **Orden de venta**
+4. Asunto ->  `Su pedido {{ object.name }} ha sido cancelado.`
+5. Contenido:
+
+    ![alt text](image-2.png)
+
+### Creación de la automatización para la plantilla anterior
+
+Como ya tenemos el modo desarrollador no es necesario activarlo, en el menú superior accedemos a **Ténico** -> **Automatización** -> **Reglas de automatización** -> **Nuevo**.
+
+Seguimos los siguientes pasos:
+1. 
