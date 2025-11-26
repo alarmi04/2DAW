@@ -180,17 +180,29 @@ Para poder automatizar que se envie por ejemplo un correo de confirmación al cr
 Cuando ya hemos configurado lo anterior para poder crear la automatización vamos a **Aplicaciones** y activamos **Reglas de automatización**.
 
 Una vez instalado el módulo hacemos lo siguiente:
-    1. Accedemos a técnico -> Automatización -> Reglas de automatización
-    2. Nuevo.
-    3. Le ponemos un nombre **"[CUSTOM] Envío mail venta automática"**
-    4. Modelo: **Orden de venta**
-    5. Activar: **El estado establecido como** -> **Orden de venta**
-    6. Agregar acción: 
-        - Tipo: Ejectutar acciones existentes.
-        - Detalles de la acción: Agregar -> **"[CUSTOM] Confirmación pedido de venta automático"**
+1. Accedemos a técnico -> Automatización -> Reglas de automatización
+2. Nuevo.
+3. Le ponemos un nombre **"[CUSTOM] Envío mail venta automática"**
+4. Modelo: **Orden de venta**
+5. Activar: **El estado establecido como** -> **Orden de venta**
+6. Agregar acción: 
+- Tipo: Ejectutar acciones existentes.
+- Detalles de la acción: Agregar -> **"[CUSTOM] Confirmación pedido de venta automático"**
 
 Para comprobar que funciona correctamente vamos a crear un pedido de venta, accediendo a **Venta** -> **Nuevo**.
 
 Y debería de aparecer lo siguiente:
 
 ![alt text](image-1.png)
+
+
+### Configuración de otra automatización.
+
+El primer paso será activar el modo desarrollador, a continuación en el menú superior accederemos a **"Técnico"** -> **"Correo electrónico"** -> **"Plantillsa de correo electrónico"**.
+
+Una vez aquí, procederemos a la creación de una plantilla de correo para cuando se cancele un pedido, para ello seguiremos los siguientes pasos.
+
+1. Clicaremos en **Nuevo**.
+2. Le pondremos el siguiente nombre: **"[CUSTOM] Cancelación de pedido"**
+3. Aplica a -> **Cancelar orden de venta**
+4. Asunto ->   
