@@ -169,13 +169,13 @@ Para crear una plantilla de correo realizaremos los siguientes pasos:
 ## Automatización de los correos.
 
 Para poder automatizar que se envie por ejemplo un correo de confirmación al crear un pedido hay q hacer lo siguiente:
-    1. Activar el modo desarrollador.
-    2. Acceder a técnico -> acciones -> acciones del servidor -> nuevo
-    3. Le ponemos un nombre a la acción en este caso **"[CUSTOM] Enviar correo electrónico automáticamente en venta"**
-    4. Escogemos el tipo en este caso **"Enviar correo electrónico"**
-    5. En modelo ponemos **"Orden de venta"**
-    6. Esocgemos la plantilla de correo electrónico anteriormente creada **"[CUSTOM] Confirmación pedido de venta automático"**
-    7. Enviar correo electrónico como **"Mensaje"** para que asi se muestre en el historial de la derecha.
+1. Activar el modo desarrollador.
+2. Acceder a técnico -> acciones -> acciones del servidor -> nuevo
+3. Le ponemos un nombre a la acción en este caso **"[CUSTOM] Enviar correo electrónico automáticamente en venta"**
+4. Escogemos el tipo en este caso **"Enviar correo electrónico"**
+5. En modelo ponemos **"Orden de venta"**
+6. Esocgemos la plantilla de correo electrónico anteriormente creada **"[CUSTOM] Confirmación pedido de venta automático"**
+7. Enviar correo electrónico como **"Mensaje"** para que asi se muestre en el historial de la derecha.
 
 Cuando ya hemos configurado lo anterior para poder crear la automatización vamos a **Aplicaciones** y activamos **Reglas de automatización**.
 
