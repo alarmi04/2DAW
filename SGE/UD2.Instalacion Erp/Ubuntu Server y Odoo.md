@@ -180,12 +180,11 @@ Para poder automatizar que se envie por ejemplo un correo de confirmación al cr
 Cuando ya hemos configurado lo anterior para poder crear la automatización vamos a **Aplicaciones** y activamos **Reglas de automatización**.
 
 Una vez instalado el módulo hacemos lo siguiente:
-1. Accedemos a técnico -> Automatización -> Reglas de automatización
-2. Nuevo.
-3. Le ponemos un nombre **"[CUSTOM] Envío mail venta automática"**
-4. Modelo: **Orden de venta**
-5. Activar: **El estado establecido como** -> **Orden de venta**
-6. Agregar acción: 
+1. **Accedemos a técnico** -> Automatización -> Reglas de automatización -> Nuevo
+2. **Nombre** "[CUSTOM] Envío mail venta automática"
+3. **Modelo:** "Orden de venta"
+4. **Activar:** El estado establecido como -> **Orden de venta**
+5. **Agregar acción:** 
     - Tipo: Ejectutar acciones existentes.
     - Detalles de la acción: Agregar -> **"[CUSTOM] Confirmación pedido de venta automático"**
 
@@ -203,10 +202,10 @@ El primer paso será activar el modo desarrollador, a continuación en el menú 
 Una vez aquí, procederemos a la creación de una plantilla de correo para cuando se cancele un pedido, para ello seguiremos los siguientes pasos.
 
 1. Clicaremos en **Nuevo**.
-2. Le pondremos el siguiente nombre: **"[CUSTOM] Cancelación de pedido"**
-3. Aplica a -> **Orden de venta**
-4. Asunto ->  `Su pedido {{ object.name }} ha sido cancelado.`
-5. Contenido:
+2. **Nombre:** "[CUSTOM] Cancelación de pedido"
+3. **Aplica a:** "Orden de venta"
+4. **Asunto:**  `Su pedido {{ object.name }} ha sido cancelado.`
+5. **Contenido:**
 
     ![alt text](image-2.png)
 
@@ -215,4 +214,27 @@ Una vez aquí, procederemos a la creación de una plantilla de correo para cuand
 Como ya tenemos el modo desarrollador no es necesario activarlo, en el menú superior accedemos a **Ténico** -> **Automatización** -> **Reglas de automatización** -> **Nuevo**.
 
 Seguimos los siguientes pasos:
-1. 
+1. **Nombre:** "[CUSTOM] Envío de cancelación de pedido automático"
+2. **Modelo:** Estado establecido como -> **Cancelado**
+3. **Agregar una acción:** **Enviar correo electrónico** -> Plantilla de correo electrónico -> **[CUSTOM] Cancelación de pedido** -> Enviar correo electrónico como -> **Mensaje**.
+
+Ahora para probar que funcione aacedemos al apartado de **Ventas** que está en el menú lateral, seleccionamos una orden de venta y la cancelamos.
+
+A continuación, se mostrara a la derecha (en el chat) el correo enviado ya que lo hemos puesto que se envie como un mensaje para poder visualizarlo a la derecha.
+
+### Configuración de una plantilla de correo para oportunidades de Venta (crm.lead)
+
+Antes de comenzar a configurar la plantilla de correo debemos asegurarnos de que tenemos instalado en el apartado de **"Aplicaciones"** el módulo o la aplicación **"CRM"**. Si no está instalado, la instalamos.
+
+Una vez instalado seguimos los pasos anteriores:
+1. Activamos modo desarrollador -> Técnico (Menú superior) -> Correo electrónico -> Plantillas de correo electrónico -> Nuevo
+2. **Nombre:** "[CUSTOM] Aviso: Oportunidad > 20.000€"
+3. **Aplica a:** Lead/Oportunidad (crm.lead)
+4. **Asunto:** "Nueva Oportunidad Superior a 20.000€"
+5. **Cuerpo/Contenido:** 
+    ```<p>Buenas <strong>Equipo de ventas,</strong></p>
+    <p>Se ha encontrado una nueva oportunidad con un valor superior a 20.000€</p>
+    <p><strong>Oportunidad: </strong>${object.name}</p>
+    <p><strong>Cliente: </strong>${object.partner_id.name}</p>
+    <p><strong>Importe: </strong>${object.expected_revenue}€</p>
+    <p>Saludos.</p>```
