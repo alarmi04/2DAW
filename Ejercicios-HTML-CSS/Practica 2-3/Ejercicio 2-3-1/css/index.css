@@ -1,0 +1,133 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgb(227, 76, 38) 0%, transparent 90%);
+}
+
+main {
+  width: 960px;
+  margin: 10px auto 10px auto;
+  text-align: left;
+  box-shadow: 10px 10px 10px rgb(128, 128, 128);
+  border-radius: 20px;
+}
+
+.principal {
+  font-family: "Courier";
+  color: white;
+  font-size: 1.1em;
+  border-bottom: 6px solid black;
+  background: linear-gradient(to bottom, #0170b9, #27aade);
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+h1 {
+  background-image: url("../imgs/logo.png");
+  background-repeat: no-repeat;
+  background-position: 25px center;
+  padding: 20px 100px 20px 100px;
+}
+
+nav {
+  font-family: "Courier";
+  font-size: 1.4em;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgb(213, 186, 50) 0%,
+    rgb(255, 218, 62) 90%
+  );
+}
+
+li {
+  display: inline-block;
+  padding-top: 80px;
+  margin: 0px 100px 20px 100px;
+  list-style-type: none;
+  text-align: center;
+  cursor: default;
+}
+
+#contenidos {
+  background-image: url("../imgs/book.png");
+  background-repeat: no-repeat;
+  background-position: center 10px;
+}
+
+#videos {
+  background-image: url("../imgs/film.png");
+  background-repeat: no-repeat;
+  background-position: center 10px;
+}
+
+#contacto {
+  background-image: url("../imgs/mail.png");
+  background-repeat: no-repeat;
+  background-position: center 10px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+a:hover {
+  color: rgb(255, 157, 0);
+}
+
+#content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.8em;
+  background-color: rgb(255, 255, 255);
+  height: 502px;
+}
+
+article {
+  width: 230px;
+  background-color: white;
+  text-align: center;
+  line-height: 1.8em;
+  float: left;
+  border-image-source: url("../../recursos/movil.png");
+  border-style: solid;
+  border-image-slice: 70;
+  margin: 5px;
+  border-width: 80px 40px 80px 40px;
+}
+
+.article_header {
+  border-bottom: 1px solid #999999;
+}
+
+h2 {
+  padding: 10px;
+  font-size: 1.2em;
+  text-shadow: 2px 2px 2px rgb(128, 128, 128);
+}
+
+footer {
+  clear: both;
+  color: white;
+  font-size: 0.7em;
+  text-align: center;
+  background: linear-gradient(to top, #0170b9, #27aade);
+  border-top: 6px solid black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+footer small {
+  color: white;
+}
+
+span {
+  font-weight: bold;
+}
