@@ -238,3 +238,18 @@ Una vez instalado seguimos los pasos anteriores:
     <p><strong>Cliente: </strong>${object.partner_id.name}</p>
     <p><strong>Importe: </strong>${object.expected_revenue}€</p>
     <p>Saludos.</p>```
+
+
+### Creación de la automatización para oportunidades de Venta.
+
+Como ya tenemos el modo desarrollador no es necesario activarlo, en el menú superior accedemos a **Ténico** -> **Automatización** -> **Reglas de automatización** -> **Nuevo**.
+
+Seguimos los siguientes pasos:
+1. **Nombre:** "[CUSTOM] Envío aviso oportunidad de venta > 20.000"
+2. **Modelo:** "Lead/Oportunidad"
+3. **Activar:** "La etapa está establecida como: **Calificado**"
+4. **Antes de actualizar el dominio:** "Ingreso esperado > 20.000 que sería lo mismo que[('expected_revenue', '>', 20000)]"
+5. **Agregar una acción:** 
+    - **Tipo:** "Enviar correo electrónico"
+    - **Plantilla de correo electrónico:** "[CUSTOM] Aviso: Oportunidad > 20.0000"
+    - **Enviar correo electrónico como:** "Mensaje"
