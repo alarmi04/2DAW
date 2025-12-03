@@ -43,7 +43,17 @@ nav ul li,
 #caja2_section5,
 .mini_caja_cont,
 .cajita,
-.cajita2 {
+.cajita2,
+#mega_caja_section5,
+#seccion1_cajas_section5,
+#seccion2_cajas_section5,
+.mini_caja_section5,
+.mini_caja2_section5,
+footer,
+#footer_caja1,
+#footer_caja2,
+#footer_mini_caja1,
+#footer_mini_caja2 {
   outline: solid 2px black;
 }
 
@@ -298,9 +308,10 @@ section {
 #caja2_section5 {
   height: 43%;
   width: 100%;
+  padding-top: 30px;
 }
 
-.mini_caja_cont{
+.mini_caja_cont {
   width: 500px;
   height: 88%;
   padding-top: 15px;
@@ -317,4 +328,75 @@ section {
   margin-bottom: 15px;
   width: 97%;
   height: 15%;
+}
+
+#mega_caja_section5 {
+  width: 95%;
+  height: 95%;
+  margin-left: 50px;
+}
+
+#seccion1_cajas_section5 {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+#seccion2_cajas_section5 {
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+
+.mini_caja_section5 {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 97%;
+  height: 22%;
+}
+
+.mini_caja2_section5 {
+  width: 97%;
+  height: 22%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+/*====FOOTER====*/
+
+footer {
+  clear: both;
+  width: 100%;
+  height: 12%;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+#footer_caja1 {
+  height: 5px;
+  width: 98%;
+  /* margin-top: 10px;
+  margin-left: 10px; */
+}
+
+#footer_caja2 {
+  width: 98%;
+  margin-top: 10px;
+  height: 70%;
+}
+
+#footer_mini_caja1 {
+  float: left;
+  width: 20%;
+  height: 70%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#footer_mini_caja2 {
+  float: right;
+  width: 20%;
+  height: 70%;
+  margin-top: 10px;
+  margin-right: 10px;
 }
