@@ -3,6 +3,7 @@ import { ref, reactive, onMounted } from "vue";
 import { db } from "./data/guitarras.js";
 import Guitarra from "./components/Guitarra.vue";
 import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
 // Con reactive
 /*const state = reactive({
@@ -38,16 +39,23 @@ const agregarCarrito = (guitarra) => {
 const aumentarCantidad = (id) => {
   const articuloIndex = carrito.value.findIndex((element) => id === element.id);
   carrito.value[articuloIndex].cantidad++;
-}
+};
 
 const decrementarCantidad = (id) => {
-  const articuloIndex = carrito.value.findIndex((element) => id = element.id);
-  if (carrito.value[articuloIndex].cantidad > 1) carrito.value[articuloIndex].cantidad--;
-}
+  const articuloIndex = carrito.value.findIndex((element) => (id = element.id));
+  if (carrito.value[articuloIndex].cantidad > 1)
+    carrito.value[articuloIndex].cantidad--;
+};
 </script>
 
 <template>
-  <Header v-bind:carrito="carrito" v-bind:guitarraPromo="guitarraPromo" @agregar-carrito="agregarCarrito" @aumentar-cantidad="aumentarCantidad" @decrementar-cantidad="decrementarCantidad"/>
+  <Header
+    v-bind:carrito="carrito"
+    v-bind:guitarraPromo="guitarraPromo"
+    @agregar-carrito="agregarCarrito"
+    @aumentar-cantidad="aumentarCantidad"
+    @decrementar-cantidad="decrementarCantidad"
+  />
 
   <main class="container-xl mt-5">
     <h2 class="text-center">Nuestra Colección</h2>
@@ -62,13 +70,7 @@ const decrementarCantidad = (id) => {
     </div>
   </main>
 
-  <footer class="bg-dark mt-5 py-5">
-    <div class="container-xl">
-      <p class="text-white text-center fs-4 mt-4 m-md-0">
-        GuitarLA - Todos los derechos Reservados
-      </p>
-    </div>
-  </footer>
+  <Footer />
 </template>
 
 <style></style>
