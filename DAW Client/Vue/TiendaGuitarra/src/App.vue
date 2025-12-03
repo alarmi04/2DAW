@@ -34,10 +34,20 @@ const agregarCarrito = (guitarra) => {
     carrito.value.push(guitarra);
   }
 };
+
+const aumentarCantidad = (id) => {
+  const articuloIndex = carrito.value.findIndex((element) => id === element.id);
+  carrito.value[articuloIndex].cantidad++;
+}
+
+const decrementarCantidad = (id) => {
+  const articuloIndex = carrito.value.findIndex((element) => id = element.id);
+  if (carrito.value[articuloIndex].cantidad > 1) carrito.value[articuloIndex].cantidad--;
+}
 </script>
 
 <template>
-  <Header v-bind:carrito="carrito" v-bind:guitarraPromo="guitarraPromo" @agregar-carrito="agregarCarrito"/>
+  <Header v-bind:carrito="carrito" v-bind:guitarraPromo="guitarraPromo" @agregar-carrito="agregarCarrito" @aumentar-cantidad="aumentarCantidad" @decrementar-cantidad="decrementarCantidad"/>
 
   <main class="container-xl mt-5">
     <h2 class="text-center">Nuestra Colección</h2>
