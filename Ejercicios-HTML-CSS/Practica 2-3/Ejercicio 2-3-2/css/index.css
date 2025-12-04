@@ -1,5 +1,5 @@
 :root {
-  --ancho-total: 100%;
+  --ancho-total: 1920px;
 }
 
 * {
@@ -8,7 +8,11 @@
 }
 
 header,
-section,
+#section1,
+#section2,
+#section3,
+#section4,
+#section5,
 #logo,
 nav,
 nav ul li,
@@ -92,11 +96,6 @@ ul li {
   float: left;
   list-style-type: none;
 }
-section {
-  width: 100%;
-  height: 100vh;
-  clear: both;
-}
 
 #botones {
   width: 297px;
@@ -112,6 +111,12 @@ section {
 }
 
 /*==============PORTADA===============*/
+
+#section1 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
 
 #caja1_portada {
   width: 50%;
@@ -168,6 +173,12 @@ section {
 
 /*================SECTION=2==============*/
 
+#section2 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
+
 #section2_caja1 {
   width: 40%;
   height: 100%;
@@ -196,6 +207,12 @@ section {
 }
 
 /*================SECTION=3===============*/
+
+#section3 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
 
 #section3_caja1 {
   width: 60%;
@@ -231,6 +248,12 @@ section {
 }
 
 /*=====================SECTION=4======================*/
+
+#section4 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
 
 #caja1_section4 {
   height: 10%;
@@ -290,8 +313,14 @@ section {
 
 /*===================SECTION=5====================*/
 
+#section5 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
+
 #caja1_section5 {
-  height: 43%;
+  height: 40%;
   width: 100%;
   padding-top: 50px; /* En lugar de margin-top en el hijo */
 }
@@ -305,7 +334,7 @@ section {
 }
 
 #caja2_section5 {
-  height: 43%;
+  height: 51%;
   width: 100%;
   padding-top: 30px;
 }
@@ -366,13 +395,14 @@ section {
 footer {
   clear: both;
   width: 100%;
-  height: 12%;
+  height: 150px;
   padding-top: 10px;
 }
 
 #footer_caja1 {
   height: 5px;
   width: 98%;
+  margin-top: 10px;
   margin-left: 10px;
 }
 
