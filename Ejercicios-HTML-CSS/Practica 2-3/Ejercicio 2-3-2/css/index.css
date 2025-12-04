@@ -327,9 +327,9 @@ ul li {
 
 .caja1_cont {
   padding-top: 10px;
-  padding-left: 400px;
-  margin-left: 120px;
-  width: 58%;
+  padding-left: 570px;
+  margin-left: 100px;
+  width: 57%;
   height: 60%;
 }
 
@@ -401,13 +401,13 @@ footer {
 
 #footer_caja1 {
   height: 5px;
-  width: 98%;
+  width: 97%;
   margin-top: 10px;
   margin-left: 10px;
 }
 
 #footer_caja2 {
-  width: 98%;
+  width: 97%;
   margin-top: 10px;
   height: 70%;
   margin-left: 10px;
