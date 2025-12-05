@@ -253,3 +253,7 @@ Seguimos los siguientes pasos:
     - **Tipo:** "Enviar correo electrónico"
     - **Plantilla de correo electrónico:** "[CUSTOM] Aviso: Oportunidad > 20.0000"
     - **Enviar correo electrónico como:** "Mensaje"
+
+
+### Asignar un sitio web a odoo.
+
