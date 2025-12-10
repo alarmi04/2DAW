@@ -36,7 +36,7 @@ if (props.categoria === "" || props.nombre === "" || props.cantidad === "") {
 } else {
 if (props.cantidad < 1) {
     error.value = "LA CANTIDAD DEBE SER SUPERIOR A 0";
-    setTimeout(() => {
+        setTimeout(() => {
             error.value = "";
         }, 2000)
 }
