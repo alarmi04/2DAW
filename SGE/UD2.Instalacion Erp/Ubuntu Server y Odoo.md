@@ -257,3 +257,26 @@ Seguimos los siguientes pasos:
 
 ### Asignar un sitio web a odoo.
 
+Para asignar un sitio web a odoo lo que hay que hacer es lo siguiente:
+
+1. Acceder a "Aplicaciones".
+2. Búscar "Sitio web".
+3. Instalar el módulo.
+4. Acceder desde el menú lateral al "Sitio web".
+5. Escoger la plantilla y el tema sobre el que trabajar.
+
+Una vez hecho todo esto habrá que publicar los productos que tenemos para vender y crearles una categoría.
+
+## Crear una categoría.
+
+1. Accedemos al Sitio web.
+2. En el menú superior -> "Comercio electrónico" -> "Categorías de comercio electrónico".
+3. Le damos a "Nuevo" y seleccionamos una categoría padre si la tiene.
+
+## Publicar el producto.
+
+1. Accedemos a "Inventario".
+2. En el menú superior -> "Productos".
+3. Entras al producto.
+4. Vas al apartado de ventas.
+5. "Está publicado" -> True. 
