@@ -64,11 +64,15 @@ header>div {
   padding-top: 10px;
   padding-left: 20px;
   /* El logo se alinea a la izquierda */
-  float: left;
   /* Logo en negrita */
   font-weight: bold;
   /* Tamaño de fuente aumentado */
   font-size: 1.3rem;
+}
+
+.menu-header {
+  display: flex;
+  flex-direction: row;
 }
 
 #menu_botones {
@@ -326,12 +330,13 @@ header>div {
   border-radius: 3.2rem;
   margin-top: 20vh;
   outline: none;
+  display: flex;
+  flex-direction: row;
 }
 
 #manda-recibe-izq {
   height: 70vh;
   width: 60%;
-  float: left;
   /* outline: none; */
 }
 
@@ -377,12 +382,16 @@ header>div {
 #manda-recibe-der {
   height: 70vh;
   width: 40%;
-  float: left;
   background-image: url(../imgs/foto4.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 90%;
   /* outline: none; */
+}
+
+.articulos {
+  display: flex;
+  flex-direction: row;
 }
 
 #educacion {
@@ -415,7 +424,6 @@ header>div {
   margin-left: 4%;
   height: 75vh;
   width: 30%;
-  float: left;
   /* outline: none; */
 }
 
@@ -457,15 +465,13 @@ header>div {
   /* outline: none; */
 }
 
-.arts-linea1>.arts-fecha {
-  float: left;
+.arts-linea1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   /* outline: none; */
 }
 
-.arts-linea1>.arts-tipo {
-  float: right;
-  /* outline: none; */
-}
 
 .arts-linea2 {
   margin-left: 1vh;
@@ -574,6 +580,8 @@ header>div {
   padding: 5vh;
   padding-bottom: 1vh;
   font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
   /* outline: none; */
 }
 
@@ -581,13 +589,15 @@ header>div {
 #cp-columna2,
 #cp-columna3 {
   width: 25%;
-  float: left;
+  display: flex;
+  flex-direction: column;
   /* outline: none; */
 }
 
 #cp-columna4 {
   width: 25%;
-  float: left;
+  display: flex;
+  flex-direction: column;
   /* outline: none; */
 }
 
@@ -622,29 +632,22 @@ footer hr {
   /* outline: none; */
 }
 
-
 #ult-fila {
   margin-top: 1.5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   /* outline: none; */
 }
-
-#uf-izq {
-  float: left;
-  /* outline: none; */
-}
-
-/* #uf-izq p {
-  outline: none;
-} */
 
 #uf-der {
-  float: right;
+  display: flex;
+  flex-direction: row;
   width: 22%;
   /* outline: none; */
 }
 
 #uf-der p {
-  float: left;
   margin-left: 9%;
   margin-bottom: 4vh;
   /* outline: none; */
