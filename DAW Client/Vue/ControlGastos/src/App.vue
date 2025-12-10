@@ -1,14 +1,70 @@
 <script setup>
+import { ref, reactive } from "vue";
 import Presupuesto from "./components/Presupuesto.vue";
+import ControlPresupuesto from "./components/ControlPresupuesto.vue";
+import iconoNuevoGasto from "./assets/nuevo-gasto.svg";
+import Modal from "./components/Modal.vue";
+
+const presupuesto = ref(0);
+const disponible = ref(0);
+const modal = reactive({
+  mostrar:false,
+  animar:false,
+})
+const gasto = reactive({
+  nombre: "",
+  cantidad: "",
+  categoria: "",
+  id: null,
+  fecha: new Date(),
+})
+
+const mostrarModal = () => {
+  modal.mostrar = true;
+  setTimeout(()=> {
+  modal.animar = true;
+  }, 500)
+
+}
+
+const ocultarModal = () => {
+  modal.animar = false;
+  setTimeout(()=> {
+  modal.mostrar = false;
+  }, 500)
+}
+
+const definirPresupuesto = (cantidad) => {
+  presupuesto.value = cantidad;
+  disponible.value = cantidad;
+};
 </script>
 
 <template>
   <header>
     <h1>Planificador de Gastos</h1>
     <div class="contenedor-header contenedor sombra">
-      <Presupuesto />
+      <Presupuesto
+        v-if="presupuesto === 0"
+        @definir-presupuesto="definirPresupuesto"
+      />
+      <ControlPresupuesto
+        v-else
+        v-bind:presupuesto="presupuesto"
+        v-bind:disponible="disponible"
+      />
     </div>
   </header>
+  <main>
+    <div class="crear-gasto" v-if="presupuesto>0">
+      <img v-bind:src="iconoNuevoGasto" alt="Icono Nuevo Gasto" @:click="mostrarModal"></img>
+    </div>
+    <Modal v-bind:modal="modal" v-if="modal.mostrar === true" @ocultar-modal="ocultarModal"
+    v-model:nombre="gasto.nombre"
+    v-model:cantidad="gasto.cantidad"
+    v-model:categoria="gasto.categoria"
+    />
+  </main>
 </template>
 
 <style>
@@ -67,4 +123,15 @@ header h1 {
   border-radius: 1.2rem;
   padding: 5rem;
 }
+
+.crear-gasto{
+position:fixed;
+bottom: 5rem;
+right: 5rem;
+}
+.crear-gasto img {
+width: 5rem;
+cursor:pointer;
+}
+
 </style>

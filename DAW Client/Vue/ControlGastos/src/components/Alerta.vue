@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="alerta"></div>
+  <div class="alerta">
+    <slot> </slot>
+  </div>
 </template>
 
 <style scoped>
