@@ -1,0 +1,651 @@
+/* Variables */
+:root {
+  /* El color de texto es negro para todo el contenido */
+  --color-contenido: #000;
+  /* Color de fondo blanco para la página */
+  --color-fondo: #FFF;
+  /* Color morado para los textos con la clase 'punto' */
+  --color-punto: #640ade;
+  /* Se utiliza la fuente Arial, o si no está disponible, Helvetica o sans-serif */
+  --fuente-principal: Arial, Helvetica, sans-serif;
+  /* Tamaño de fuente estándar de html, luego usaremos medidas relativas a este rem*/
+  --tam-fuente-raiz: 16px;
+}
+
+/* Estilos generales */
+* {
+  margin: 0px;
+  padding: 0px;
+  /* Esto lo quitaremos */
+  /* outline: solid 2px var(--color-contenido); */
+  font-family: var(--fuente-principal);
+}
+
+html {
+  font-size: var(--tam-fuente-raiz);
+}
+
+a {
+  /* Se eliminan los subrayados en los enlaces */
+  text-decoration: none;
+  /* outline: none; */
+  color: var(--color-contenido);
+}
+
+body {
+  width: 90%;
+  margin: 0 auto;
+  background-color: var(--color-fondo);
+  /* outline: none; */
+}
+
+/* Estilos específicos para los textos morados */
+.punto {
+  color: var(--color-punto);
+  /* outline: none; */
+}
+
+/* Estilos para el encabezado */
+header {
+  /* Altura del encabezado en 10% de la altura de la ventana */
+  height: 15vh;
+  /* outline: none; */
+}
+
+header>div {
+  padding-top: 3vh;
+  height: 7vh;
+  /* outline: none; */
+}
+
+#logo {
+  width: 150px;
+  height: 3vh;
+  padding-top: 10px;
+  padding-left: 20px;
+  /* El logo se alinea a la izquierda */
+  float: left;
+  /* Logo en negrita */
+  font-weight: bold;
+  /* Tamaño de fuente aumentado */
+  font-size: 1.3rem;
+}
+
+#menu_botones {
+  width: 60%;
+  margin-left: auto;
+  height: 4vh;
+  /* El menú de navegación se alinea a la derecha */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* outline: none; */
+}
+
+#menu_botones nav,
+#menu_botones div {
+  width: 50%;
+  height: 4vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* outline: none; */
+}
+
+#menu_botones nav ul {
+  /* Se eliminan los puntos en la lista del menú */
+  list-style: none;
+  height: 4vh;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: row;
+  /* outline: none; */
+}
+
+#menu_botones nav ul li {
+  /* Los elementos del menú se alinean horizontalmente */
+  /* Espaciado entre elementos del menú */
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1vh;
+  /* outline: none; */
+}
+
+#menu_botones nav ul li a {
+  font-size: 1.2rem;
+}
+
+#botones button {
+  /* outline: none; */
+  /* Se eliminan los bordes de los botones */
+  border: none;
+  /* Se agregan márgenes internos a los botones */
+  padding: 15px 20px;
+  /* Espaciado entre los botones */
+  margin: 0px 10px;
+  /* Bordes redondeados en los botones */
+  border-radius: 10px;
+  /* Texto en negrita */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#iniciarsesion {
+  /* Fondo blanco para el botón de iniciar sesión */
+  background-color: var(--color-fondo);
+  /* outline: none; */
+}
+
+#descargaapp {
+  /* Fondo morado para el botón de descargar la app */
+  background-color: var(--color-punto);
+  /* Texto blanco para el botón */
+  color: var(--color-fondo);
+  /* outline: none; */
+}
+
+#quesomos {
+  /* Alto de la sección al 90% de la altura de la ventana */
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  /* outline: none; */
+}
+
+#quesomos article {
+  height: 90vh;
+  /* outline: none; */
+}
+
+#art-izq {
+  width: 40%;
+  /* outline: none; */
+}
+
+#art-der {
+  width: 60%;
+  /* outline: none; */
+  background-image: url(../imgs/foto1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 40% -7vh;
+}
+
+#quesomos a {
+  /* Espaciado alrededor del enlace */
+  padding: 5px;
+  /* Espaciado entre los enlaces */
+  margin-right: 5px;
+  /* Tamaño de fuente pequeño */
+  font-size: 1rem;
+  /* Color morado */
+  color: var(--color-punto);
+  /* outline: none; */
+}
+
+#quesomos #nuevo {
+  /* Fondo morado */
+  background-color: var(--color-punto);
+  /* Bordes redondeados */
+  border-radius: 8px;
+  /* Texto blanco */
+  color: var(--color-fondo);
+  /* outline: none; */
+}
+
+#quesomos h2 {
+  /* Tamaño grande para el título */
+  font-size: 5rem;
+  font-weight: bolder;
+  margin-top: 3vh;
+  width: 80%;
+  /* outline: none; */
+}
+
+#quesomos p {
+  margin-top: 4vh;
+  /* outline: none; */
+  width: 70%;
+  font-size: 1.8rem;
+}
+
+/* Botón en la sección "¿Qué somos?" */
+#quesomos button {
+  /* Se eliminan los bordes */
+  border: none;
+  /* Fondo morado */
+  background-color: var(--color-punto);
+  /* Bordes redondeados */
+  border-radius: 8px;
+  /* Espaciado interno */
+  padding: 20px 30px;
+  /* Texto blanco */
+  color: var(--color-fondo);
+  margin-top: 4vh;
+  /* Tamaño de fuente medio */
+  font-size: 1.3rem;
+  /* outline: none; */
+}
+
+#stores {
+  /* Espaciado superior */
+  display: block;
+  margin-top: 4vh;
+  /* outline: none; */
+}
+
+
+#tudecides {
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  /* outline: none; */
+}
+
+#tudecides-izq {
+  height: 90vh;
+  width: 40%;
+  background-image: url(../imgs/foto3.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* outline: none; */
+}
+
+#tudecides-der {
+  height: 90vh;
+  width: 60%;
+  /* outline: none; */
+}
+
+#tudecides-der>h2 {
+  margin-top: 8vh;
+  margin-left: 20%;
+  margin-bottom: 5vh;
+  width: 60%;
+  font-size: 5rem;
+  font-weight: bold;
+  /* outline: none; */
+}
+
+#contendor-crezca-i {
+  width: 5%;
+  height: 40vh;
+  margin-left: 20%;
+  background-image: url(../imgs/foto-nums.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* outline: none; */
+}
+
+#contenedores-crezca-i-d {
+  display: flex;
+  flex-direction: row;
+}
+
+#contendor-crezca-d {
+  width: 65%;
+  height: 40vh;
+  margin-left: 3%;
+  /* outline: none; */
+}
+
+#contendor-crezca-d h3 {
+  font-size: 1.5rem;
+  /* outline: none; */
+}
+
+#contendor-crezca-d p {
+  font-size: 1.13rem;
+  margin-top: 1vh;
+  outline: none;
+}
+
+#creacta {
+  margin-top: 0.6vh;
+  width: 50%;
+  /* outline: none; */
+}
+
+#soltarjeta {
+  margin-top: 4.5vh;
+  width: 64%;
+  outline: none;
+}
+
+#acttarjeta {
+  margin-top: 4.7vh;
+  /* outline: none; */
+}
+
+
+#manda-recibe {
+  height: 70vh;
+  /* Fondo gris claro */
+  background-color: #f5f5f5;
+  /* Bordes redondeados */
+  border-radius: 3.2rem;
+  margin-top: 20vh;
+  outline: none;
+}
+
+#manda-recibe-izq {
+  height: 70vh;
+  width: 60%;
+  float: left;
+  /* outline: none; */
+}
+
+#manda-recibe-izq h2 {
+  /* El título se muestra en negrita */
+  font-weight: bold;
+  /* Tamaño de fuente grande */
+  font-size: 5rem;
+  margin-left: 18%;
+  width: 70%;
+  margin-top: 15vh;
+  /* outline: none; */
+}
+
+#manda-recibe-izq p {
+  margin-left: 18%;
+  /* Tamaño de fuente moderadamente grande */
+  font-size: 1.8rem;
+  width: 60%;
+  margin-top: 3.5vh;
+  /* outline: none; */
+}
+
+#manda-recibe-izq button {
+  margin-left: 18%;
+  margin-top: 3.5vh;
+  /* Tamaño de fuente medio */
+  font-size: 1.5rem;
+  width: 25%;
+  /* Se eliminan los bordes */
+  border: none;
+  /* Fondo morado */
+  background-color: var(--color-punto);
+  /* Bordes redondeados */
+  border-radius: .5rem;
+  /* Texto blanco */
+  color: var(--color-fondo);
+  /* Espaciado interno del botón */
+  padding: 20px 10px;
+  /* outline: none; */
+}
+
+#manda-recibe-der {
+  height: 70vh;
+  width: 40%;
+  float: left;
+  background-image: url(../imgs/foto4.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+  /* outline: none; */
+}
+
+#educacion {
+  height: 100vh;
+  margin-top: 20vh;
+  outline: none;
+}
+
+#educacion>h3 {
+  /* Tamaño de fuente grande */
+  font-size: 5rem;
+  width: 50%;
+  font-weight: bolder;
+  /* outline: none; */
+}
+
+#comienza-apr {
+  /* Tamaño de fuente moderadamente grande */
+  font-size: 2.1rem;
+  width: 60%;
+  margin-top: 3.5vh;
+  margin-bottom: 3.5vh;
+  /* outline: none; */
+}
+
+#a1-creditos,
+#a2-inversion,
+#a3-emprender {
+  margin-top: 1vh;
+  margin-left: 4%;
+  height: 75vh;
+  width: 30%;
+  float: left;
+  /* outline: none; */
+}
+
+/* Reescribo margen del primer articulo */
+#a1-creditos {
+  margin-left: 0px;
+}
+
+.img-gente {
+  height: 57vh;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+#imgente-izq {
+  background-image: url(../imgs/retrato1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* outline: none; */
+}
+
+#imgente-cen {
+  background-image: url(../imgs/retrato2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#imgente-der {
+  background-image: url(../imgs/retrato3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.arts-linea1 {
+  margin-left: 1vh;
+  margin-top: 3vh;
+  font-size: 1.3rem;
+  /* outline: none; */
+}
+
+.arts-linea1>.arts-fecha {
+  float: left;
+  /* outline: none; */
+}
+
+.arts-linea1>.arts-tipo {
+  float: right;
+  /* outline: none; */
+}
+
+.arts-linea2 {
+  margin-left: 1vh;
+  margin-top: 8vh;
+  margin-bottom: 3vh;
+  /* outline: none; */
+}
+
+.arts-linea2 p {
+  clear: both;
+  font-size: 2rem;
+  font-weight: bold;
+  /* outline: none; */
+}
+
+#educacion article a {
+  margin-left: 1vh;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-punto);
+  /* outline: none; */
+}
+
+#abrectahoy {
+  margin-top: 8vh;
+  padding: 5vh;
+  height: 30vh;
+  /* outline: none; */
+}
+
+#contenedor-abrecta {
+  margin: 0 auto;
+  height: 30vh;
+  width: 80%;
+  padding: 3vh;
+  /* Bordes redondeados */
+  border-radius: 25px;
+  border: none;
+  background-color: var(--color-punto);
+  color: var(--color-fondo);
+  /* outline: none; */
+}
+
+#subcontenedor-abrecta {
+  margin: 0 auto;
+  height: 25vh;
+  width: 70%;
+  padding: 1vh;
+  /* outline: none; */
+}
+
+#subcontenedor-abrecta h3 {
+  /* Tamaño de fuente grande */
+  font-size: 5rem;
+  font-weight: bolder;
+  text-align: center;
+  /* outline: none; */
+}
+
+#subcontenedor-abrecta p {
+  font-size: 1.8rem;
+  margin-top: 3vh;
+  text-align: center;
+  /* outline: none; */
+}
+
+#subcontenedor-abrecta form {
+  /* Fondo blanco */
+  background-color: var(--color-fondo);
+  /* Bordes redondeados */
+  border-radius: 5px;
+  margin: 3vh auto;
+  height: 10vh;
+  width: 65%;
+}
+
+#correo {
+  border: none;
+  font-size: 1.5rem;
+  padding: 3vh 3% 3vh 3%;
+  width: 55%;
+  margin-top: .5vh;
+  /* outline: none; */
+}
+
+#subcontenedor-abrecta form label {
+  /* Fondo morado */
+  background-color: var(--color-punto);
+  /* Texto blanco */
+  color: var(--color-fondo);
+  /* Espaciado interno */
+  padding: 2.3vh 2%;
+  /* Bordes redondeados */
+  border-radius: 5px;
+  font-size: 1.4rem;
+  /* outline: none; */
+}
+
+/* footer {
+  outline: none;
+} */
+
+#contenedor-pie {
+  height: 20vh;
+  margin-top: 3vh;
+  padding: 5vh;
+  padding-bottom: 1vh;
+  font-size: 1.5rem;
+  /* outline: none; */
+}
+
+#cp-columna1,
+#cp-columna2,
+#cp-columna3 {
+  width: 25%;
+  float: left;
+  /* outline: none; */
+}
+
+#cp-columna4 {
+  width: 25%;
+  float: left;
+  /* outline: none; */
+}
+
+.cp-fila1 {
+  font-weight: bolder;
+  /* outline: none; */
+}
+
+.cp-fila1,
+.cp-fila2,
+.cp-fila3,
+.cp-fila4 {
+  margin: 2vh 1vh 1vh 1vh;
+  /* outline: none; */
+}
+
+/* #contenedor-pie p {
+  outline: none;
+} */
+
+/* #contenedor-pie a .fab {
+  outline: none;
+} */
+
+.fab {
+  margin-right: 2%;
+  font-size: 2rem;
+}
+
+footer hr {
+  margin-top: 2vh;
+  /* outline: none; */
+}
+
+
+#ult-fila {
+  margin-top: 1.5vh;
+  /* outline: none; */
+}
+
+#uf-izq {
+  float: left;
+  /* outline: none; */
+}
+
+/* #uf-izq p {
+  outline: none;
+} */
+
+#uf-der {
+  float: right;
+  width: 22%;
+  /* outline: none; */
+}
+
+#uf-der p {
+  float: left;
+  margin-left: 9%;
+  margin-bottom: 4vh;
+  /* outline: none; */
+}
