@@ -5,7 +5,7 @@ import Alerta from "./Alerta.vue";
 
 const error = ref("");
 
-const emit = defineEmits(['ocultar-modal', 'update:nombre', 'update:cantidad', 'update:categoria'])
+const emit = defineEmits(['ocultar-modal', 'update:nombre', 'update:cantidad', 'update:categoria', 'guardar-gasto'])
 
 const props = defineProps({
     cantidad: {
@@ -33,13 +33,14 @@ if (props.categoria === "" || props.nombre === "" || props.cantidad === "") {
             error.value = "";
         }, 2000)
     
-} else {
-if (props.cantidad < 1) {
+} else if (props.cantidad < 1)  {
+
     error.value = "LA CANTIDAD DEBE SER SUPERIOR A 0";
         setTimeout(() => {
             error.value = "";
         }, 2000)
-}
+} else {
+    emit('guardar-gasto');
 }
 }
 

@@ -4,9 +4,13 @@ import Presupuesto from "./components/Presupuesto.vue";
 import ControlPresupuesto from "./components/ControlPresupuesto.vue";
 import iconoNuevoGasto from "./assets/nuevo-gasto.svg";
 import Modal from "./components/Modal.vue";
+import { generarId } from "./helpers";
+import Gasto from "./components/Gasto.vue";
+import { watch } from "fs";
 
 const presupuesto = ref(0);
 const disponible = ref(0);
+const gastos = ref([]);
 const modal = reactive({
   mostrar:false,
   animar:false,
@@ -18,6 +22,15 @@ const gasto = reactive({
   id: null,
   fecha: new Date(),
 })
+const gastado = ref(0);
+
+watch(gastos, () => {
+gastado.value = gastos.value.reduce((total, gasto) => total + gasto.cantidad, 0)
+}, {
+  deep:true
+}
+
+)
 
 const mostrarModal = () => {
   modal.mostrar = true;
@@ -38,9 +51,21 @@ const definirPresupuesto = (cantidad) => {
   presupuesto.value = cantidad;
   disponible.value = cantidad;
 };
+
+const guardarGasto = () => {
+  gasto.id = generarId();
+  gastos.value.push({...gasto});
+  ocultarModal();
+  Object.entries(gasto).forEach(([key]) => {
+    gasto[key] = ""
+  })
+  gasto.id = null;
+  gasto.fecha = new Date();
+}
 </script>
 
 <template>
+  <div :class="{fijar:modal.mostrar}">
   <header>
     <h1>Planificador de Gastos</h1>
     <div class="contenedor-header contenedor sombra">
@@ -55,16 +80,21 @@ const definirPresupuesto = (cantidad) => {
       />
     </div>
   </header>
-  <main>
-    <div class="crear-gasto" v-if="presupuesto>0">
+  <main v-if="presupuesto>0">
+    <div class="crear-gasto">
       <img v-bind:src="iconoNuevoGasto" alt="Icono Nuevo Gasto" @:click="mostrarModal"></img>
     </div>
-    <Modal v-bind:modal="modal" v-if="modal.mostrar === true" @ocultar-modal="ocultarModal"
+    <Modal v-bind:modal="modal" v-if="modal.mostrar === true" @ocultar-modal="ocultarModal" @guardar-gasto="guardarGasto"
     v-model:nombre="gasto.nombre"
     v-model:cantidad="gasto.cantidad"
     v-model:categoria="gasto.categoria"
     />
+    <div class="listado-gastos contenedor">
+      <h2>{{ gastos.length > 0 ? "Gastos: " : "NO hay gastos" }}</h2>
+      <Gasto v-for="gasto in gastos" v-bind:gasto="gasto" :key="gasto.id"/>
+    </div>
   </main>
+  </div>
 </template>
 
 <style>
@@ -133,5 +163,18 @@ right: 5rem;
 width: 5rem;
 cursor:pointer;
 }
+
+.listado-gastos{
+margin-top: 10rem;
+}
+.listado-gastos h2{
+font-weight: 900;
+color:var(--gris-oscuro);
+}
+
+.fijar{ 
+overflow: hidden; 
+height: 100vh; 
+} 
 
 </style>
