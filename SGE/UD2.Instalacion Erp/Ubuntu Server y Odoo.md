@@ -280,3 +280,17 @@ Una vez hecho todo esto habrá que publicar los productos que tenemos para vende
 3. Entras al producto.
 4. Vas al apartado de ventas.
 5. "Está publicado" -> True. 
+
+### Personalizar Sitio Web.
+
+Para personalizar el sitio web lo que vamos a hacer es entrar al sitio web y una vez hecho haremos lo siguiente:
+
+1. Arriba a la izquierda observáras un boton de edición.
+2. Una vez accedido al apartado de edición, desde aquí podrás modificar todas las secciones del sitio web.
+
+- **Modificar un texto** -> Clicaremos encima para modificar el contenido del parráfo (se mostrará a la derecha una barra lateral con todos los atributos/propiedades del parráfo)
+- **Modificar un boton** -> Clicaremos encima para modificar el texto, y en editar enlace para asignarle un nuevo hipervínculo.
+- **Modificar una imagen** -> Clicaremos encima de una imagen y en la barra lateral escogeremos la opción de ***reemplazar*** en la cuál escogeremos la imagen correcta. (La imagen se adaptará a las propiedades/atributos ya puestos por el tema escogido)
+- **Eliminar una sección** -> Clicaremos encima de la seccióon que querramos eliminar ya que los temas suelen poner secciones que luego no necesitamos o cambiamos completamente.
+    1. Una vez seleccionado aparecera una barra con varios botones.
+    2. Uno de ellos será el de la papelera, clicamos en el.
