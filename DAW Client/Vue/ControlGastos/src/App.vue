@@ -95,7 +95,7 @@ const seleccionarGasto = (id) => {
       <div class="crear-gasto">
         <img v-bind:src="iconoNuevoGasto" alt="Icono Nuevo Gasto" @:click="mostrarModal"></img>
       </div>
-      <Modal v-bind:disponible="disponible" v-bind:modal="modal" v-if="modal.mostrar === true" @ocultar-modal="ocultarModal"
+      <Modal v-bind:id="gasto.id" v-bind:disponible="disponible" v-bind:modal="modal" v-if="modal.mostrar === true" @ocultar-modal="ocultarModal"
         @guardar-gasto="guardarGasto" v-model:nombre="gasto.nombre" v-model:cantidad="gasto.cantidad"
         v-model:categoria="gasto.categoria" />
       <div class="listado-gastos contenedor">

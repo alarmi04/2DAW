@@ -4,7 +4,6 @@ import cerrarModal from "../assets/cerrar.svg";
 import Alerta from "./Alerta.vue";
 
 const error = ref("");
-
 const emit = defineEmits(['ocultar-modal', 'update:nombre', 'update:cantidad', 'update:categoria', 'guardar-gasto'])
 
 const props = defineProps({
@@ -27,29 +26,51 @@ const props = defineProps({
     disponible: {
         type: Number,
         required: true
+    },
+    id: {
+        type:[String, null],
+        required:true,
     }
 })
 
+const cantidadAnterior = ref(props.cantidad);
+
 const validarGasto = () => {
-if (props.categoria === "" || props.nombre === "" || props.cantidad === "") {
-    error.value = "TODOS LOS CAMPOS SON OBLIGATORIOS";
-        setTimeout(() => {
-            error.value = "";
-        }, 2000)
-    
-} else if (props.cantidad < 1)  {
-    error.value = "LA CANTIDAD DEBE SER SUPERIOR A 0";
-        setTimeout(() => {
-            error.value = "";
-        }, 2000)
-} else if (props.cantidad > props.disponible) {
-    error.value = "HAS EXCEDIDO EL PRESUPUESTO";
-    setTimeout(()=> {
-        error.value= "";
-    }, 2000)
-} else {
+
+    if (props.categoria === "" || props.nombre === "" || props.cantidad === "") {
+        error.value = "TODOS LOS CAMPOS SON OBLIGATORIOS";
+            setTimeout(() => {
+                error.value = "";
+            }, 2000)
+        return;
+    }
+    if (props.cantidad < 1)  {
+        error.value = "LA CANTIDAD DEBE SER SUPERIOR A 0";
+            setTimeout(() => {
+                error.value = "";
+            }, 2000)
+        return;
+    }
+    if (props.id) {
+        const diferencia = props.cantidad - cantidadAnterior.value;
+
+        if (diferencia > props.disponible) {
+            error.value = "HAS EXCEDIDO EL PRESUPUESTO";
+            setTimeout(() => {
+                error.value="";
+            }, 2000);
+            return
+        }
+    } else if(props.cantidad > props.disponible) {
+            error.value = "HAS EXCEDIDO EL PRESUPUESTO";
+            setTimeout(() => {
+                error.value="";
+            }, 2000);
+            return
+    }
+ 
     emit('guardar-gasto');
-}
+
 }
 
 
