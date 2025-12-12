@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5em;
+  padding: 1em;
 }
 
 h2 {
@@ -31,7 +32,7 @@ ul li {
 }
 
 strong {
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 @media screen and (min-width: 600px) {
@@ -41,6 +42,7 @@ strong {
     flex-direction: row;
     justify-content: space-between;
   }
+
   hr {
     display: none;
   }
@@ -48,27 +50,75 @@ strong {
   .datos {
     width: 30%;
   }
+
   .form_exp {
     width: 70%;
   }
 
   .form_exp ul {
-    padding-left: 2em;
-    list-style-position: inside;
-    list-style-type: disc;
+    list-style: none;
+    padding-left: 0;
   }
 
   .form_exp ul li {
     display: flex;
     flex-direction: row;
+    padding-left: 2em;
   }
 
   .form_exp ul li::before {
     content: "•";
     margin-right: 0.5em;
+    margin-left: -1.5em;
     flex-shrink: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .page {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
+  }
+
+  .datos {
+    width: 30%;
+  }
+
+  .form_exp {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
+  }
+
+  .form,
+  .exp {
+    width: 48%;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    padding-top: 0.5em;
+  }
+
+  ul li {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1em;
+  }
+
+  ul li::before {
+    content: "•";
+    margin-right: 1em;
+    flex-shrink: 0;
+  }
 }
