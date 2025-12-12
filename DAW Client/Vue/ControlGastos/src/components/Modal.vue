@@ -23,6 +23,10 @@ const props = defineProps({
     modal: {
         type: Object,
         required: true,
+    },
+    disponible: {
+        type: Number,
+        required: true
     }
 })
 
@@ -34,11 +38,15 @@ if (props.categoria === "" || props.nombre === "" || props.cantidad === "") {
         }, 2000)
     
 } else if (props.cantidad < 1)  {
-
     error.value = "LA CANTIDAD DEBE SER SUPERIOR A 0";
         setTimeout(() => {
             error.value = "";
         }, 2000)
+} else if (props.cantidad > props.disponible) {
+    error.value = "HAS EXCEDIDO EL PRESUPUESTO";
+    setTimeout(()=> {
+        error.value= "";
+    }, 2000)
 } else {
     emit('guardar-gasto');
 }
