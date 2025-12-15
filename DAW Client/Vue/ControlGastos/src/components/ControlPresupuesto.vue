@@ -1,5 +1,5 @@
 <script setup>
-import cambioMoneda from "../helpers";
+import { cambioMoneda } from "../helpers";
 import { computed } from "vue";
 import "vue3-circle-progress/dist/circle-progress.css";
 import CircleProgress from "vue3-circle-progress";
@@ -18,6 +18,8 @@ const props = defineProps({
     required: true,
   },
 });
+
+const emit = defineEmits(['resetear-app'])
 
 const porcentaje = computed(() => {
   return Math.round((props.gastado / props.presupuesto) * 100);
@@ -38,7 +40,7 @@ const porcentaje = computed(() => {
       />
     </div>
     <div class="contenedor-presupuesto">
-      <button class="reset-app">Resetear App</button>
+      <button class="reset-app" type="button" @click="$emit('resetear-app')">Resetear App</button>
       <p>
         <span>Presupuesto:</span>
         {{ cambioMoneda(props.presupuesto) }}

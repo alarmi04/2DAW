@@ -6,8 +6,7 @@ import IconoGastos from "../assets/icono_gastos.svg";
 import IconoOcio from "../assets/icono_ocio.svg";
 import IconoSalud from "../assets/icono_salud.svg";
 import IconoSuscripciones from "../assets/icono_suscripciones.svg";
-import { formatearFecha } from "../helpers";
-import cambioMoneda from "../helpers";
+import { formatearFecha, cambioMoneda } from "../helpers";
 
 const diccionarioIconos = {
   ahorro: IconoAhorro,

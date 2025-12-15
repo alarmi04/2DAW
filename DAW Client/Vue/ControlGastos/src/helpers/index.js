@@ -1,4 +1,4 @@
-export default function cambioMoneda(number) {
+export function cambioMoneda(number) {
     return number.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
 }
 
@@ -14,5 +14,5 @@ export const formatearFecha = (fecha) => {
         month: 'long',
         day: '2-digit',
     }
-    return fecha.toLocaleDateString('es-Es', opciones);
+    return fecha.toLocaleDateString('es-ES', opciones);
 }

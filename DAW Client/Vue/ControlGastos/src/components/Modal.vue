@@ -4,7 +4,7 @@ import cerrarModal from "../assets/cerrar.svg";
 import Alerta from "./Alerta.vue";
 
 const error = ref("");
-const emit = defineEmits(['ocultar-modal', 'update:nombre', 'update:cantidad', 'update:categoria', 'guardar-gasto'])
+const emit = defineEmits(['ocultar-modal', 'update:nombre', 'update:cantidad', 'update:categoria', 'guardar-gasto', 'eliminar-gasto'])
 
 const props = defineProps({
     cantidad: {
@@ -83,7 +83,7 @@ const validarGasto = () => {
     </div>
     <div class="contenedor contenedor-formulario" :class="[modal.animar ? 'animar':'cerrar']">
         <form class="nuevo-gasto" @submit.prevent="validarGasto">
-            <legend>Añadir Gasto</legend>
+            <legend>{{ id ? 'Guardar cambios':'Añadir Gasto' }}</legend>
             <Alerta v-if="error !== ''">
                 {{ error }}
             </Alerta>
@@ -120,76 +120,97 @@ const validarGasto = () => {
                 </select>
             </div>
 
-            <input type="submit" value="Añadir Gasto"></input>
+            <input type="submit" :value="[id ? 'Guardar Cambios':'Añadir Gasto']"></input>
         </form>
+        <button            
+            type="button"
+            class="btn-eliminar"
+            v-if="props.id"
+            @click="$emit('eliminar-gasto', props.id)"
+            >
+            Eliminar Gasto
+        </button>
     </div>
   </div>
 </template>
 
 <style scoped>
 .modal {
-  position: absolute;
-  background-color: rgb(0 0 0 / 0.9);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    position: absolute;
+    background-color: rgb(0 0 0 / 0.9);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .cerrar-modal{
-position:absolute;
-right: 3rem;
-top: 3rem;
+    position:absolute;
+    right: 3rem;
+    top: 3rem;
 }
 .cerrar-modal img{
-width: 3rem;
-cursor: pointer;
+    width: 3rem;
+    cursor: pointer;
 }
 
 .nuevo-gasto {
-margin: 10rem auto 0 auto;
-display: grid;
-gap: 2rem;
+    margin: 10rem auto 0 auto;
+    display: grid;
+    gap: 2rem;
 }
 .nuevo-gasto legend {
-text-align: center;
-color: var(--blanco);
-font-size: 3rem;
-font-weight: 700;
+    text-align: center;
+    color: var(--blanco);
+    font-size: 3rem;
+    font-weight: 700;
 }
 .campo {
-display: grid;
-gap: 2rem;
+    display: grid;
+    gap: 2rem;
 }
 .nuevo-gasto input,
 .nuevo-gasto select {
-background-color: var(--gris-claro);
-border-radius: 1rem;
-padding: 1rem;
-border: none;
-font-size:2.2rem;
+    background-color: var(--gris-claro);
+    border-radius: 1rem;
+    padding: 1rem;
+    border: none;
+    font-size:2.2rem;
 }
 .nuevo-gasto label {
-color: var(--blanco);
-font-size: 3rem;
+    color: var(--blanco);
+    font-size: 3rem;
 }
 .nuevo-gasto input[type="submit"]{
-background-color: var(--azul);
-color: var(--blanco);
-font-weight: 700;
-cursor: pointer;
-}
+    background-color: var(--azul);
+    color: var(--blanco);
+    font-weight: 700;
+    cursor: pointer;
+    }
 
 .contenedor-formulario {
-transition-property: all;
-transition-duration: 300ms;
-transition-timing-function: ease-in;
-opacity: 0;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in;
+    opacity: 0;
 }
 .contenedor-formulario.animar {
-opacity: 1;
+    opacity: 1;
 }
 .contenedor-formulario.cerrar {
-opacity: 0;
+    opacity: 0;
 }
+
+.btn-eliminar{ 
+    border-radius: 1rem; 
+    border:none; 
+    padding: 1rem; 
+    width: 100%; 
+    background-color: #ef4444; 
+    font-weight: 700; 
+    font-size: 2.2rem; 
+    color: var(--blanco); 
+    margin-top: 10rem; 
+    cursor: pointer; 
+} 
 </style>
