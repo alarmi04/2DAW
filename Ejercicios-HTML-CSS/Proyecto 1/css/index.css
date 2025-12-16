@@ -1,0 +1,74 @@
+:root {
+  --color-primario: #003a7f;
+  /* Azul oscuro */
+  --color-secundario: #0094e9;
+  /*Azul más claro */
+  --color-texto-principal: #000;
+  /* Negro */
+  --color-texto-secundario: #fff;
+  /* Blanco */
+  --color-fondo-principal: #fff;
+  /* Blanco */
+  --fuente-principal: "Quicksand", sans-serif;
+  /* --espaciado-base: 1rem; */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#page {
+  height: 100vh;
+  font-family: var(--fuente-principal);
+}
+
+.logo {
+  width: 30vw;
+  height: auto;
+}
+
+.logo_div {
+    padding: 0.6rem;
+    padding-left: 2rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  color: var(--color-primario);
+  font-size: 25px;
+}
+
+.menu ul {
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.menu ul li {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid black;
+  width: 100%;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: var(--color-primario);
+}
+
+.menu ul li a.active {
+  color: var(--color-secundario);
+}
+
+/* SERVICIOS section index */
+
+.servicios {
+    background-image: url("../imagenes/");
+}
+
+
+
+
+
