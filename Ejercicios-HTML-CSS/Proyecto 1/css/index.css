@@ -453,6 +453,11 @@ footer i {
   color: var(--color-texto-secundario);
 }
 
+.servicios_div i {
+  font-size: 5rem;
+  color: var(--color-texto-secundario);
+}
+
 .servicios_div_p01 {
   padding-top: 10%;
   font-weight: 500;
@@ -652,6 +657,7 @@ footer i {
     text-decoration: none;
     color: var(--color-primario);
     font-size: 1.2rem;
+    font-weight: bold;
   }
 
   .servicios {
@@ -659,16 +665,28 @@ footer i {
     height: 95vh;
   }
 
+  .servicios_boton {
+    height: 95vh;
+  }
+
+  .servicios_boton_p01 {
+    font-size: 3rem;
+  }
+
+  .servicios_boton_p02 {
+    font-size: 1.7rem;
+  }
+
   .servicios_p01 {
     font-size: 3rem;
-    text-align: center;
-    font-weight: 100;
     padding-left: 17%;
     padding-right: 17%;
   }
 
   .servicios_p02 {
     font-size: 1.7rem;
+    padding-bottom: 11%;
+    padding-top: 11%;
   }
 
   .servicios button {
@@ -799,6 +817,44 @@ footer i {
 
   .inicio_s05_proyecto_img {
     width: 100%;
-    border-radius:10px;
+    border-radius: 10px;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+
+  footer i {
+    font-size: 2rem;
+  }
+
+  .nosotros_s01_p01 {
+    font-size: 1.8rem;
+  }
+
+  .nosotros_s01_p02 {
+    font-size: 1.3rem;
+  }
+
+  .nosotros_s01 {
+    padding-left: 16%;
+    padding-right: 16%;
+  }
+
+  .nosotros_s01_p03 {
+    font-size: 1.3rem;
+  }
+
+  .nosotros_div_p01 {
+    font-size: 1.7rem;
+    padding: 4%;
+  }
+
+  .nosotros_div_p02 {
+    font-size: 1.3rem;
+  }
+
+  .nosotros_div_p03 {
+    font-size: 1.3rem;
   }
 }
