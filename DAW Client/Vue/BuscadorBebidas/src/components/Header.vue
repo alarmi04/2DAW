@@ -13,10 +13,18 @@ import { RouterLink } from "vue-router";
         </div>
 
         <nav class="flex gap-4 text-white">
-          <RouterLink :to="{ name: 'inicio' }" class="uppercase font-bold">
+          <RouterLink
+            :to="{ name: 'inicio' }"
+            class="uppercase font-bold p-2"
+            active-class="text-orange-500 bg-white rounded-lg p-2"
+          >
             Inicio
           </RouterLink>
-          <RouterLink :to="{ name: 'favoritos' }" class="uppercase font-bold">
+          <RouterLink
+            :to="{ name: 'favoritos' }"
+            class="uppercase font-bold p-2"
+            active-class="text-orange-500 bg-white rounded-lg p-2"
+          >
             Favoritos
           </RouterLink>
         </nav>
