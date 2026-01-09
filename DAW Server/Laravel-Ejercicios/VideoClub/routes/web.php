@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return 'Main Page';
+    return view('home');
 });
 
 Route::get('/Login', function () {
-    return 'User Login';
+    return view('login');
 });
 
 Route::get('/Logout', function () {
@@ -15,17 +15,17 @@ Route::get('/Logout', function () {
 });
 
 Route::get('/Catalog', function () {
-    return 'Movie list';
+    return view('catalog');
 });
 
 Route::get('/Catalog/show/{id}', function ($id) {
-    return 'Detail view of the movie ' . $id;
+    return view('catalog_show', array('id' => $id));
 });
 
 Route::get('/Catalog/create', function () {
-    return 'Add movie';
+    return view('catalog_create');
 });
 
 Route::get('/Catalog/edit/{id}', function ($id) {
-    return 'Edit movie '.$id;
+    return view('catalog_edit', array('id' => $id));
 });
