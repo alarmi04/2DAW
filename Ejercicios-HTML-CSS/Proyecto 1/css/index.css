@@ -7,11 +7,20 @@
   --fuente-principal: "Quicksand", sans-serif;
 }
 
+.servicios_flex_pc {
+  display: none;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: var(--fuente-principal);
+}
+
+body {
+  max-width: 1920px;
+  height: 1080px;
 }
 
 header {
@@ -168,7 +177,7 @@ header {
   background-color: var(--color-secundario);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   text-align: center;
   padding-top: 7%;
   padding-left: 7%;
@@ -218,7 +227,6 @@ header {
   margin-top: 4%;
 }
 
-/* Contenedor flex para servicios */
 .servicios_flex {
   display: flex;
   flex-direction: column;
@@ -1006,10 +1014,374 @@ footer i {
   }
 
   .servicios {
-    background-image: url('../imagenes/fondo-interred-g.jpg');
+    background-image: url("../imagenes/fondo-interred-g.jpg");
+  }
+
+  .servicios_boton {
+    background-image: url("../imagenes/fondo-interred-g.jpg");
+    gap: 0;
+  }
+
+  .servicios_boton_p02 {
+    padding: 0;
+  }
+
+  .servicios_boton_p01 {
+    font-size: 4rem;
   }
 
   .servicios_p01 {
-    
+    font-size: 3.5rem;
+  }
+
+  .servicios_p02 {
+    padding-bottom: 0.5%;
+    padding-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .servicios button {
+    font-size: 1.3rem;
+    padding-left: 6.3%;
+    padding-right: 6.3%;
+  }
+
+  .inicio_s02 {
+    padding-top: 1%;
+    justify-content: center;
+    padding-bottom: 2%;
+  }
+
+  .inicio_s02_p01 {
+    font-size: 2.3rem;
+  }
+
+  .inicio_s02_p02 {
+    font-size: 1.55rem;
+    padding-bottom: 1.7%;
+  }
+
+  .img_inicio_01 {
+    width: 25vw;
+    padding-top: 3%;
+  }
+
+  .inicio_s03 {
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+  .inicio_s03_p01 {
+    font-size: 2.5rem;
+  }
+
+  .inicio_s03_p02 {
+    margin-top: 0;
+    padding-top: 1%;
+    font-size: 1.5rem;
+  }
+
+  .servicios_flex {
+    display: none;
+  }
+
+  .servicios_flex_pc {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .servicio_columna_01 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: auto;
+    gap: 7rem;
+    width: 35%;
+  }
+
+  .servicio_item_pc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .img_empresa3 {
+    width: 25vw;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .servicio_columna_03 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: auto;
+    gap: 7rem;
+    width: 35%;
+  }
+
+  .icono_circulo i {
+    font-size: 2.5rem;
+  }
+
+  .icono_circulo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .servicio_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 88%;
+  }
+
+  .servicio_texto {
+    font-size: 1.3rem;
+  }
+
+  .servicio_texto_02 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .servicio_icono {
+    width: 12%;
+  }
+
+  .servicios_columna_02 {
+    width: 30%;
+    text-align: center;
+  }
+
+  .inicio_s04 {
+    background-image: url("../imagenes/fondo-servicios-g.jpg");
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  .inicio_s04_areas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .inicio_s04_p01 {
+    font-size: 3rem;
+  }
+
+  .inicio_s04_div01 {
+    width: 33%;
+    padding-bottom: 1%;
+  }
+
+  .inicio_s04_p03 {
+    font-size: 1rem;
+    padding: 3%;
+    padding-top: 0;
+  }
+
+  .inicio_s04_p01 {
+    padding-bottom: 3%;
+  }
+
+  .inicio_s04_b01 {
+    font-size: 1.1rem;
+  }
+
+  .inicio_s05_proyectos {
+    padding-left: 3%;
+    padding-right: 3%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .inicio_s05_p01 {
+    padding-top: 2%;
+    font-size: 3rem;
+  }
+
+  .inicio_s05_proyecto {
+    padding-top: 3%;
+    width: 20%;
+  }
+
+  .inicio_s05_proyecto_p {
+    font-size: 1.2rem;
+  }
+
+  .inicio_s05 {
+    padding-bottom: 2%;
+  }
+
+  footer {
+    height: 15vh;
+  }
+
+  footer p {
+    font-size: 1.2rem;
+  }
+
+  footer div i {
+    font-size: 3rem;
+  }
+
+  .nosotros_div {
+    text-align: center;
+  }
+
+  .nosotros_s01_p01 {
+    padding-top: 3%;
+    padding-bottom: 1%;
+    font-size: 2.4rem;
+  }
+
+  .nosotros_s01_p02 {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .nosotros_s01_p03 {
+    text-align: left;
+    font-size: 1.5rem;
+    padding-top: 1%;
+    padding-bottom: 3%;
+  }
+
+  .nosotros_div_p01 {
+    text-align: left;
+    font-size: 2.2rem;
+    padding-left: 2%;
+    padding-bottom: 1%;
+    padding-top: 1.5%;
+  }
+
+  .nosotros_div_p02 {
+    text-align: left;
+    padding-top: 1%;
+    font-size: 1.5rem;
+    padding-bottom: 1%;
+  }
+
+  .nosotros_div_p03 {
+    text-align: left;
+    font-size: 1.5rem;
+    padding-bottom: 3%;
+  }
+
+  .nosotros_div img {
+    height: 50vh;
+    width: auto;
+  }
+
+  .servicios_s01 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+    width: 100%;
+    padding: 2%;
+    height: auto;
+    padding-bottom: 4%;
+  }
+
+  .servicios_div_p01 {
+    font-size: 2.5rem;
+  }
+
+  .servicios_div_p02 {
+    font-size: 1.5rem;
+  }
+
+  .servicios_div02 p {
+    font-size: 1.2rem;
+  }
+
+  .servicios_div i {
+    font-size: 11rem;
+  }
+
+  .servicios_div {
+    height: auto;
+    padding: 3%;
+    width: 31%;
+    padding-top: 5%;
+    margin-bottom: 0;
+  }
+
+  .webs_s01_p01 {
+    margin-top: 5%;
+    font-size: 2.5rem;
+  }
+
+  .webs_s01_p02 {
+    font-size: 1.5rem;
+  }
+
+  .webs_s01 i {
+    font-size: 12rem;
+  }
+
+  .contacto_s01 {
+    padding-top: 3%;
+  }
+
+  .contacto_s01_p01 {
+    font-size: 3rem;
+    padding-bottom: 1%;
+  }
+
+  .contacto_s01_form {
+    padding-top: 2%;
+  }
+
+  .contacto_s01_form label {
+    font-size: 1.5rem;
+    color: var(--color-primario);
+  }
+
+  .campo input::placeholder,
+  .campo textarea::placeholder {
+    font-size: 1.3rem;
+  }
+
+  .campo input,
+  .campo textarea {
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+  .campo textarea {
+    height: 10rem;
+  }
+
+  .campo_botones button {
+    font-size: 1.5rem;
+  }
+
+  .contacto_s01_p02 {
+    padding-top: 3%;
+    font-size: 1.7rem;
+    padding-bottom: 0.4%;
+  }
+  
+  .contacto_s01_p03 {
+    font-size: 1.1rem;
+    padding-bottom: 1%;
+  }
+
+  .contacto_s01_p03.gracias {
+    padding-bottom: 2%;
   }
 }
