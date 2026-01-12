@@ -1,9 +1,28 @@
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
+import { computed } from 'vue';
+import { useBebidasStore } from '../stores/bebidas';
+
+/* Utilizo useRoute() para acceder a la información de la ruta actual */
+const route = useRoute();
+
+/* Se recomiendo crear una variable igualada a la funcion del Store */
+const store = useBebidasStore();
+console.log(store.categorias);
+
+console.log(route);
+
+/* Si el nombre de la ruta es igual a inicio, es decir, estamos en la vista inicio, se devolvera true */
+const paginaInicio = computed(() => route.name === 'inicio');
+
+const handleSubmit = () => {
+  store.obtenerBebidas();
+}
+
 </script>
 
 <template>
-  <header class="bg-slate-800">
+  <header class="bg-slate-800" :class="{'header':paginaInicio}">
     <div class="mx-auto container px-5 py-16">
       <div class="flex justify-between items-center">
         <div>
@@ -31,6 +50,8 @@ import { RouterLink } from "vue-router";
       </div>
       <form
         class="md:w-1/2 2xl:w-1/3 bg-orange-400 my-32 p-10 rounded-lg shadow space-y-6"
+        v-if="paginaInicio"
+        v-on:submit.prevent="handleSubmit()"
       >
         <div class="space-y-4">
           <label
@@ -43,6 +64,7 @@ import { RouterLink } from "vue-router";
             type="text"
             class="p-3 w-full rounded-lg focus:outline-none bg-white"
             placeholder="Nombre o Ingrediente: ej. Vodka, Tequilla, etc"
+            v-model="store.busqueda.nombre"
           />
         </div>
         <div class="space-y-4">
@@ -54,8 +76,16 @@ import { RouterLink } from "vue-router";
           <select
             id="categoria"
             class="p-3 w-full rounded-lg focus:outline-none bg-white"
+            v-model="store.busqueda.categoria"
           >
             <option value="">--Seleccione--</option>
+            <option
+              v-for="categoria in store.categorias"
+              :key="categoria.strCategory"
+              :value="categoria.strCategory"
+            >
+            {{ categoria.strCategory }}
+            </option>
           </select>
         </div>
         <input
@@ -67,3 +97,11 @@ import { RouterLink } from "vue-router";
     </div>
   </header>
 </template>
+
+<style>
+  .header {
+    background-image: url('/img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+</style>
