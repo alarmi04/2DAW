@@ -615,7 +615,7 @@ footer i {
 
 /* TABLET */
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 750px) and (orientation: portrait){
   body {
     min-height: 100vh;
   }
@@ -1463,14 +1463,16 @@ footer i {
     padding-bottom: 5%;
   }
 
-  .servicios_flex {
-    padding: 2%;
+ .servicios_flex {
+    display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    flex-wrap: nowrap;
+    padding: 2%;
+    overflow-x: auto;
+    overflow-y: hidden;
     align-items: flex-start;
     gap: 2rem;
   }
-
   .icono_circulo {
     width: 20vh;
     height: 20vh;
