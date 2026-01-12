@@ -83,6 +83,7 @@ header {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  z-index: 99999;
 }
 
 .flechaSubir {
