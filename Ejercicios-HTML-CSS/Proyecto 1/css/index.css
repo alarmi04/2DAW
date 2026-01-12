@@ -615,7 +615,7 @@ footer i {
 
 /* TABLET */
 
-@media screen and (min-width: 750px) and (orientation: portrait){
+@media screen and (min-width: 750px) and (orientation: portrait), screen and (min-width:1250px){
   body {
     min-height: 100vh;
   }
