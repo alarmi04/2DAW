@@ -615,7 +615,8 @@ footer i {
 
 /* TABLET */
 
-@media screen and (min-width: 750px) and (orientation: portrait), screen and (min-width:1250px){
+/* TABLET */
+@media screen and (min-width: 750px) {
   body {
     min-height: 100vh;
   }
@@ -1390,7 +1391,7 @@ footer i {
   }
 }
 
-@media (max-width: 950px) and (orientation: landscape) {
+@media screen and (max-width: 749px) and (orientation: landscape) {
   header {
     height: 20vh;
   }
@@ -1463,7 +1464,7 @@ footer i {
     padding-bottom: 5%;
   }
 
- .servicios_flex {
+  .servicios_flex {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
