@@ -41,7 +41,7 @@ function accionReiniciar() {
 function accionRetrasar() {
   const video = document.querySelector("#medio");
   if (!medio.ended && video.currentTime > 0) {
-    video.currentTime = video.currentTime - 5;
+    video.currentTime -= 5;
     video.play();
   }
 }
@@ -49,7 +49,7 @@ function accionRetrasar() {
 function accionAdelantar() {
   const video = document.querySelector("#medio");
   if (!medio.ended && video.currentTime > 0) {
-    video.currentTime = video.currentTime + 5;
+    video.currentTime += 5;
     video.play();
   }
 }
@@ -60,13 +60,33 @@ function accionSilenciarEscuchar() {
   if (!medio.ended && video.currentTime > 0) {
     if (botonSilenciar.value === "silenciar") {
       botonSilenciar.value = "escuchar";
-	  botonSilenciar.textContent = "escuchar";
-	  video.muted = true;
+      botonSilenciar.textContent = "escuchar";
+      video.muted = true;
     } else {
       botonSilenciar.value = "silenciar";
-	  botonSilenciar.textContent = "silenciar";
-	  video.muted = false;
+      botonSilenciar.textContent = "silenciar";
+      video.muted = false;
     }
+  }
+}
+
+function accionSubirVolumen() {
+  const video = document.querySelector("#medio");
+  if (video.volume >= 1) {
+    return;
+  } else {
+    video.volume += 0.1;
+    console.log(video.volume);
+  }
+}
+
+function accionBajarVolumen() {
+  const video = document.querySelector("#medio");
+  if (video.volume <= 0.1) {
+    return;
+  } else {
+    video.volume -= 0.1;
+    console.log(video.volume);
   }
 }
 
@@ -93,8 +113,14 @@ function iniciar() {
   adelantar = document.querySelector("#adelantar");
   adelantar.addEventListener("click", accionAdelantar);
 
-  silenciar = document.querySelector('#silenciar');
-  silenciar.addEventListener('click', accionSilenciarEscuchar);
+  silenciar = document.querySelector("#silenciar");
+  silenciar.addEventListener("click", accionSilenciarEscuchar);
+
+  subirVol = document.querySelector("#masVolumen");
+  subirVol.addEventListener("click", accionSubirVolumen);
+
+  bajarVol = document.querySelector("#menosVolumen");
+  bajarVol.addEventListener("click", accionBajarVolumen);
 }
 
 window.addEventListener("load", iniciar, false);
