@@ -9,19 +9,19 @@ const tarea = reactive({
 
 const listaTareas = ref([])
 
-const modificarEstado = (tarea) => {
-  tarea.completada ? tarea.completada = false: tarea.completada = true;
+const modificarEstado = (t) => {
+  t.completada ? t.completada = false: t.completada = true;
 }
 
 const agregarTarea = () => {
-  const tareaExiste = listaTareas.value.findIndex((element) => {element.nombre === tarea.nombre})
+  const tareaExiste = listaTareas.value.findIndex((element) => element.nombre === tarea.nombre)
   if (tareaExiste < 0) {
     listaTareas.value.push({...tarea});
   } 
 }
 
-const eliminarTarea = (tarea) => {
-  const tareaIndex = listaTareas.value.findIndex((element) => {tarea === element.nombre})
+const eliminarTarea = (t) => {
+  const tareaIndex = listaTareas.value.findIndex((element) => t.nombre === element.nombre)
   if (tareaIndex >= 0) {
     listaTareas.value.splice(tareaIndex, 1)
   }
@@ -42,7 +42,7 @@ const eliminarTarea = (tarea) => {
     <ul>
       <Tarea 
       v-for="element in listaTareas"
-      v-bind:tarea="tarea"
+      v-bind:tarea="element"
       @eliminar-tarea="eliminarTarea"
       @modificar-estado="modificarEstado"
       />

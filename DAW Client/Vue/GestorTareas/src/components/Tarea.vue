@@ -15,7 +15,7 @@ const emits = defineEmits(['eliminar-tarea', 'modificar-estado'])
     <div>
       <button class="modificar" @:click="$emit('modificar-estado', tarea)">
         {{
-          tarea.completada ? "Marcar como completada" : "Marcar como pendiente"
+          tarea.completada ? "Marcar como pendiente" : "Marcar como completada"
         }}
       </button>
       <button class="eliminar" @:click="$emit('eliminar-tarea', tarea)">Eliminar</button>
