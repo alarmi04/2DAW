@@ -294,3 +294,41 @@ Para personalizar el sitio web lo que vamos a hacer es entrar al sitio web y una
 - **Eliminar una sección** -> Clicaremos encima de la seccióon que querramos eliminar ya que los temas suelen poner secciones que luego no necesitamos o cambiamos completamente.
     1. Una vez seleccionado aparecera una barra con varios botones.
     2. Uno de ellos será el de la papelera, clicamos en el.
+
+### Desarrollar un módulo
+
+Vamos a crear un módulo para una tienda de videojuegos, para ello accederemos al contenedor ejecutando el siguiente comando:
+- `docker exec -it "nombre_contenedor" bash`
+Una vez dentro procedemos a seguir los siguientes pasos:
+1. Ejecutar `odoo scaffold "nombre_modulo" /mnt/extra-addons`
+2. Abrir el módulo con visual studio code.
+3. Modificar el __manifest__.py:
+    1. `'name':"videojuegos"`
+    2. `'summary':"Módulo para una tienda de videojuegos"`
+    3. Descomentamos la siguiente línea: `'security/ir.model.access.csv'`
+4. Accedemos a la carpeta models, modificamos models.py:
+    1. Descomentamos las siguientes líneas:
+        - `from odoo import models, fields, api`
+        - ```class videojuegos(models.Model):
+             _name = 'videojuegos.videojuegos'
+             _description = 'videojuegos.videojuegos'
+             name = fields.Char()
+             value = fields.Integer()```
+    1. Una vez descomentado empezamos a modificarlo:
+        1. Dejamos el nombre igual porque parece descriptivo: `_name = 'videojuegos.videojuegos'`
+        2. Modificamos la descripción del modelo: `_description = 'Tienda de videojuegos'`
+        3. Ahora vamos a modificar todos los atributos:
+            - Mantenemos name y añadimos los siguientes:
+                - ```consola = fields.Selection([
+                        ('consola_PS5', 'PS5'),
+                        ('consola_Xbox', 'Xbox'),
+                        ('consola_Switch', 'Switch'),
+                        ('consola_PC', 'PC')
+                    ] string = "Consola")```
+                - `precioBase = fields.Float()`
+                - `unidades = fields.Integer()`
+                - ```estado = fields.Selection([
+                        ('estado_Nuevo', 'Nuevo'),
+                        ('estado_Segunda', 'Segunda mano')
+                    ] string = "Estado del videojuego")``` 
+                - `descuento = fields.Boolean()` 
