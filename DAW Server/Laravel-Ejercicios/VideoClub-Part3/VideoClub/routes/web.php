@@ -1,0 +1,25 @@
+<?php
+
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\HomeController;
+
+Route::redirect('/', '/catalog');
+
+Route::middleware('auth')->group(function () {
+    // Profile de Breeze
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Tus rutas de catálogo
+    Route::get('/catalog', [CatalogController::class, 'getIndex'])->name('catalog.index');
+    Route::get('/catalog/show/{id}', [CatalogController::class, 'getShow'])->name('catalog.show');
+    Route::get('/catalog/create', [CatalogController::class, 'getCreate'])->name('catalog.create');
+    Route::post('/catalog/create', [CatalogController::class, 'postCreate'])->name('movies.create');
+    Route::get('/catalog/edit/{id}', [CatalogController::class, 'getEdit'])->name('catalog.edit');
+    Route::put('/catalog/edit/{id}', [CatalogController::class, 'putEdit'])->name('movies.update');
+});
+
+require __DIR__ . '/auth.php';
