@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Fogon Argentino | Servicios</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <header class="flex justify-between items-center px-6 h-[20vh]">
+      <img src="./imgs/el_fogon_logo_sin_bg.png" alt="Logo" class="h-30" />
+      <!--MENU HAMBURGUESA SACADO DE INTERNET-->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="./home.html">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="./famosos.html">Famosos</a></li>
+          <li><a href="./resenyas.html">Reseñas</a></li>
+          <li><a href="./reservas.html">Reserva</a></li>
+          <li><a href="./menu.html">Menú</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="min-h-[100vh] px-3 pb-10">
+      <div class="h-auto border-y border-gray-500 p-5">
+        <p class="font-bold text-4xl text-center">Servicios</p>
+      </div>
+      <div>
+        <div
+          id="servicio_01"
+          class="mt-10 flex flex-row items-center gap-4 bg-blue-300 rounded-lg p-4 sombra-caja-azul"
+        >
+          <img
+            src="./imgs/domicilio.jpg"
+            class="rounded-full size-36 object-cover"
+          />
+          <p class="text-[1.2rem]">Pedir a domicilio</p>
+        </div>
+        <div
+          id="servicio_02"
+          class="mt-10 flex flex-row items-center gap-4 bg-blue-300 rounded-lg p-4 sombra-caja-azul derecha"
+        >
+          <img
+            src="./imgs/celebracion.jpg"
+            class="rounded-full size-36 object-cover"
+          />
+          <p class="text-[1.2rem]">Celebraciones privadas</p>
+        </div>
+        <div
+          id="servicio_03"
+          class="mt-10 flex flex-row items-center gap-4 bg-blue-300 rounded-lg p-4 sombra-caja-azul"
+        >
+          <img
+            src="./imgs/degustacion.jpg"
+            class="rounded-full size-36 object-cover"
+          />
+          <p class="text-[1.2rem]">Menú degustación</p>
+        </div>
+        <div
+          id="servicio_03"
+          class="mt-10 flex flex-row items-center gap-4 bg-blue-300 rounded-lg p-4 sombra-caja-azul derecha"
+        >
+          <img
+            src="./imgs/parrilladas.jpg"
+            class="rounded-full size-36 object-cover"
+          />
+          <p class="text-[1.2rem]">Parrilladas para grupos</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
