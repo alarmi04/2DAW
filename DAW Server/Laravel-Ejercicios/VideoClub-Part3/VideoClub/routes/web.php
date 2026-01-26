@@ -8,12 +8,10 @@ use App\Http\Controllers\HomeController;
 Route::redirect('/', '/catalog');
 
 Route::middleware('auth')->group(function () {
-    // Profile de Breeze
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // Tus rutas de catálogo
     Route::get('/catalog', [CatalogController::class, 'getIndex'])->name('catalog.index');
     Route::get('/catalog/show/{id}', [CatalogController::class, 'getShow'])->name('catalog.show');
     Route::get('/catalog/create', [CatalogController::class, 'getCreate'])->name('catalog.create');
