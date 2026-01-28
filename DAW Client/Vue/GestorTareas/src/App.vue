@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, computed, onMounted, watch } from "vue";
 import Tarea from "./components/Tarea.vue";
 
 const tarea = reactive({
@@ -7,44 +7,70 @@ const tarea = reactive({
   completada: false,
 });
 
-const listaTareas = ref([])
+const listaTareas = ref([]);
+
+onMounted(() => {
+  listaTareas.value = JSON.parse(localStorage.getItem("tareas")) || [];
+});
 
 const modificarEstado = (t) => {
-  t.completada ? t.completada = false: t.completada = true;
-}
+  t.completada ? (t.completada = false) : (t.completada = true);
+};
 
 const agregarTarea = () => {
-  const tareaExiste = listaTareas.value.findIndex((element) => element.nombre === tarea.nombre)
+  const tareaExiste = listaTareas.value.findIndex(
+    (element) => element.nombre === tarea.nombre,
+  );
   if (tareaExiste < 0) {
-    listaTareas.value.push({...tarea});
-  } 
-}
+    listaTareas.value.push({ ...tarea });
+  }
+};
 
 const eliminarTarea = (t) => {
-  const tareaIndex = listaTareas.value.findIndex((element) => t.nombre === element.nombre)
+  const tareaIndex = listaTareas.value.findIndex(
+    (element) => t.nombre === element.nombre,
+  );
   if (tareaIndex >= 0) {
-    listaTareas.value.splice(tareaIndex, 1)
+    listaTareas.value.splice(tareaIndex, 1);
   }
-}
+};
 
+const tareasPendientes = computed(
+  () => listaTareas.value.filter((t) => !t.completada).length,
+);
+
+const tareasCompletadas = computed(
+  () => listaTareas.value.filter((t) => t.completada).length,
+);
+
+watch(
+  listaTareas,
+  () => {
+    localStorage.setItem("tareas", JSON.stringify(listaTareas.value));
+  },
+  { deep: true },
+);
 </script>
 
 <template>
   <div id="app">
     <h1>Gestión de Tareas</h1>
     <form @:submit.prevent="agregarTarea">
-      <input type="text" placeholder="Añadir tarea..." v-model="tarea.nombre"/>
+      <input type="text" placeholder="Añadir tarea..." v-model="tarea.nombre" />
       <button type="submit">Añadir</button>
     </form>
     <!-- Mostrar conteos de tareas pendientes y completadas -->
-    <p>Tareas pendientes: | Tareas completadas:</p>
+    <p>
+      Tareas pendientes: {{ tareasPendientes }} | Tareas completadas:
+      {{ tareasCompletadas }}
+    </p>
     <!-- Lista de tareas -->
     <ul>
-      <Tarea 
-      v-for="element in listaTareas"
-      v-bind:tarea="element"
-      @eliminar-tarea="eliminarTarea"
-      @modificar-estado="modificarEstado"
+      <Tarea
+        v-for="element in listaTareas"
+        v-bind:tarea="element"
+        @eliminar-tarea="eliminarTarea"
+        @modificar-estado="modificarEstado"
       />
     </ul>
   </div>
