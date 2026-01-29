@@ -14,23 +14,29 @@
     </style>
   </head>
   <body>
-    <header class="flex justify-between items-center px-6 h-[20vh]">
-      <img src="./imgs/el_fogon_logo_sin_bg.png" alt="Logo" class="h-30" />
+    <header
+      class="flex justify-between items-center px-6 md:px-8 lg:px-20 h-[20vh]"
+    >
+      <img
+        src="./imgs/el_fogon_logo_sin_bg.png"
+        alt="Logo"
+        class="h-30 lg:h-36"
+      />
       <!--MENU HAMBURGUESA SACADO DE INTERNET-->
       <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <label for="menu-toggle" class="hamburger">
+      <label for="menu-toggle" class="hamburger lg:hidden">
         <span></span>
         <span></span>
         <span></span>
       </label>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="#">Inicio</a></li>
+      <nav class="nav-menu lg:block">
+        <ul class="lg:flex lg:gap-8 md:text-base lg:text-xl">
+          <li><a href="./home.html" class="active">Inicio</a></li>
           <li><a href="./servicios.html">Servicios</a></li>
-          <li><a href="#">Famosos</a></li>
-          <li><a href="#">Reseñas</a></li>
-          <li><a href="#">Reserva</a></li>
-          <li><a href="#">Menú</a></li>
+          <li><a href="./famosos.html">Famosos</a></li>
+          <li><a href="./resenyas.html">Reseñas</a></li>
+          <li><a href="./reservas.html">Reserva</a></li>
+          <li><a href="./menu.html">Menú</a></li>
         </ul>
       </nav>
     </header>
@@ -46,38 +52,55 @@
     </div>
 
     <!--SOBRE NOSOTROS-->
-    <section id="nosotros" class="min-h-[100vh] px-3">
+    <section id="nosotros" class="min-h-[100vh] px-3 md:px-10 lg:px-32">
       <div class="h-auto border-b border-gray-500 p-5">
-        <p class="font-bold text-4xl text-center">El Fogon Argentino</p>
+        <p class="font-bold text-4xl md:text-5xl text-center">
+          El Fogon Argentino
+        </p>
       </div>
       <div class="relative">
-        <img src="./imgs/imagen_1_nosotros.jpg" class="rounded-lg mt-4" />
-        <p class="absolute top-23 left-23 text-white text-2xl">Bienvenidos</p>
-      </div>
-      <div class="flex flex-col gap-6">
-        <h1 class="pt-10 text-3xl sombra-azul">Sobre Nosotros...</h1>
-        <p class="text-justify">
-          Somos una familia argentina que llegó a España con una maleta llena de
-          recetas y el sueño de compartir los sabores de nuestra tierra. En
-          <span class="font-bold">El Fogón Argentino</span>, cada corte de carne
-          se asa a fuego lento, como nos enseñaron nuestros abuelos en Buenos
-          Aires. Más que un restaurante, somos un pedacito de Argentina donde el
-          asado, el buen vino y la calidez de nuestra gente te harán sentir como
-          en casa.
+        <img
+          src="./imgs/imagen_1_nosotros.jpg"
+          class="rounded-lg mt-4 w-full"
+        />
+        <p
+          class="absolute top-23 left-23 text-white text-2xl md:text-4xl md:top-54 md:left-60 lg:top-[40%] lg:text-6xl lg:left-[40%] lg:uppercase"
+        >
+          Bienvenidos
         </p>
-
+      </div>
+      <div
+        class="flex flex-col md:flex-row md:items-center gap-6 lg:gap-12 lg:mt-10"
+      >
+        <div class="md:w-1/2">
+          <h1 class="pt-10 text-3xl md:text-4xl sombra-azul">
+            Sobre Nosotros...
+          </h1>
+          <p class="text-justify mt-6 md:text-lg">
+            Somos una familia argentina que llegó a España con una maleta llena
+            de recetas y el sueño de compartir los sabores de nuestra tierra. En
+            <span class="font-bold">El Fogón Argentino</span>, cada corte de
+            carne se asa a fuego lento, como nos enseñaron nuestros abuelos en
+            Buenos Aires. Más que un restaurante, somos un pedacito de Argentina
+            donde el asado, el buen vino y la calidez de nuestra gente te harán
+            sentir como en casa.
+          </p>
+        </div>
         <img
           src="./imgs/sobre_nosotros_familia.jpg"
-          class="w-62 h-62 rounded-full object-cover mx-auto"
+          class="w-62 h-62 md:w-80 md:h-80 rounded-full object-cover mx-auto"
         />
       </div>
     </section>
-    <section class="min-h-[100vh] px-3">
+
+    <section class="min-h-[100vh] px-3 md:px-10 lg:px-32">
       <div class="h-auto border-y border-gray-500 p-5 mt-10 mb-5">
-        <p class="font-bold text-3xl text-center">¿Comó trabajamos?</p>
+        <p class="font-bold text-3xl md:text-4xl text-center">
+          ¿Comó trabajamos?
+        </p>
       </div>
-      <div class="flex flex-col gap-6">
-        <p>
+      <div class="flex flex-col md:flex-row md:items-center gap-6 lg:gap-12">
+        <p class="md:w-1/2 md:text-lg">
           Fuego, tiempo y dedicación. Así trabajamos. Elegimos carnes de
           calidad, las asamos a la brasa con paciencia y las servimos en su
           punto exacto. Sin atajos, sin prisas, como se ha hecho toda la vida en
@@ -87,26 +110,38 @@
           src="./videos/cocinando.mp4"
           controls
           muted
-          class="w-full h-full object-cover rounded-lg"
+          class="w-full md:w-1/2 h-full object-cover rounded-lg"
         ></video>
-        <h1 class="pt-5 text-3xl sombra-azul">Encuentranos en...</h1>
-        <div class="bg-blue-200 rounded-lg mb-10 p-5 flex flex-col gap-6">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6163.522825305903!2d-0.46865632352889736!3d39.42951931513098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6051c6c56cfbf7%3A0x342b9d1e78f763c!2sIES%20Serra%20Perenxisa!5e0!3m2!1ses!2ses!4v1769185989802!5m2!1ses!2ses"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            class="w-[100%]"
-          ></iframe>
-          <p>
+      </div>
+      <h1 class="pt-10 text-3xl md:text-4xl sombra-azul">Encuentranos en...</h1>
+      <div
+        class="bg-blue-200 rounded-lg my-10 p-5 md:p-10 flex flex-col lg:flex-row gap-6 lg:gap-12"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6163.522825305903!2d-0.46865632352889736!3d39.42951931513098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6051c6c56cfbf7%3A0x342b9d1e78f763c!2sIES%20Serra%20Perenxisa!5e0!3m2!1ses!2ses!4v1769185989802!5m2!1ses!2ses"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full lg:w-1/2"
+        ></iframe>
+        <div class="flex flex-col gap-4 lg:w-1/2">
+          <p class="md:text-lg lg:text-2xl">
             <span class="font-bold">Calle:</span> Carrer de la Corona D'Arago,
             1, 46900 Torrent, Valencia
           </p>
-          <p class="font-bold text-center text-2xl sombra-azul">HORARIO</p>
-          <ul>
+          <p class="md:text-lg lg:text-2xl">
+            <span class="font-bold">Teléfono (Haz tus pedidos):</span><br />+34
+            650 94 09 32
+          </p>
+          <p
+            class="font-bold text-center text-2xl sombra-azul mt-4 md:text-xl lg:text-2xl"
+          >
+            HORARIO
+          </p>
+          <ul class="md:text-lg lg:text-2xl">
             <li>Lunes, 12:00-23:00</li>
             <li>Martes, 12:00-23:00</li>
             <li>Miércoles, 12:00-23:00</li>
@@ -118,14 +153,39 @@
         </div>
       </div>
     </section>
-    <footer class="h-[15vh] bg-blue-300 w-full flex flex-row p-5">
+    <section class="w-full h-auto px-3 text-center flex flex-col items-center justify-center">
+      <h1 class="md:text-xl lg:text-3xl">
+        ¡Estate al tanto de las novedades del
+        <span class="font-extrabold text-blue-500">Fogon Argentino!</span>
+      </h1>
+      <input
+        type="email"
+        placeholder="tu@email.com"
+        class="border border-gray-300 rounded-lg p-3 focus:border-blue-300 focus:outline-none w-[70%] mt-4 mb-4 lg:w-[40%]"
+      />
+      <button
+        type="submit"
+        class="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-600 transition mb-10"
+      >
+        ¡Suscribete!
+      </button>
+    </section>
+    <footer
+      class="min-h-[15vh] bg-blue-300 w-full flex flex-row p-5 md:px-12 lg:px-20"
+    >
       <div class="w-[70vw]">
-        <ul class="flex flex-wrap gap-3 text-[0.8rem]">
-          <li class="hover:text-white active"><a href="#">Inicio</a></li>
+        <ul
+          class="flex flex-wrap gap-3 md:gap-6 text-[0.8rem] md:text-base lg:text-xl h-full items-center"
+        >
+          <li class="hover:text-white active">
+            <a href="./home.html">Inicio</a>
+          </li>
           <li class="hover:text-white">
             <a href="./servicios.html">Servicios</a>
           </li>
-          <li class="hover:text-white"><a href="./famosos.html">Famosos</a></li>
+          <li class="hover:text-white">
+            <a href="./famosos.html">Famosos</a>
+          </li>
           <li class="hover:text-white">
             <a href="./resenyas.html">Reseñas</a>
           </li>
@@ -135,22 +195,22 @@
           <li class="hover:text-white"><a href="./menu.html">Menú</a></li>
         </ul>
       </div>
-      <div class="flex gap-4 items-center w-[30vw]">
+      <div class="flex gap-4 md:gap-6 items-center w-[30vw] justify-end">
         <a
           href="https://twitter.com"
-          class="text-2xl hover:text-blue-400"
+          class="text-2xl md:text-4xl hover:text-blue-400"
         >
           <i class="fa-brands fa-twitter"></i>
         </a>
         <a
           href="https://instagram.com"
-          class="text-2xl hover:text-pink-500"
+          class="text-2xl md:text-4xl hover:text-pink-500"
         >
           <i class="fa-brands fa-instagram"></i>
         </a>
         <a
           href="https://youtube.com"
-          class="text-2xl hover:text-red-500"
+          class="text-2xl md:text-4xl hover:text-red-500"
         >
           <i class="fa-brands fa-youtube"></i>
         </a>

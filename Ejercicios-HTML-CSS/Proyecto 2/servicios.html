@@ -14,19 +14,25 @@
     </style>
   </head>
   <body>
-    <header class="flex justify-between items-center px-6 h-[20vh]">
-      <img src="./imgs/el_fogon_logo_sin_bg.png" alt="Logo" class="h-30" />
+    <header
+      class="flex justify-between items-center px-6 md:px-8 lg:px-20 h-[20vh]"
+    >
+      <img
+        src="./imgs/el_fogon_logo_sin_bg.png"
+        alt="Logo"
+        class="h-30 lg:h-36"
+      />
       <!--MENU HAMBURGUESA SACADO DE INTERNET-->
       <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <label for="menu-toggle" class="hamburger">
+      <label for="menu-toggle" class="hamburger lg:hidden">
         <span></span>
         <span></span>
         <span></span>
       </label>
-      <nav class="nav-menu">
-        <ul>
+      <nav class="nav-menu lg:block">
+        <ul class="lg:flex lg:gap-8 md:text-base lg:text-xl">
           <li><a href="./home.html">Inicio</a></li>
-          <li><a href="#">Servicios</a></li>
+          <li><a href="./servicios.html" class="active">Servicios</a></li>
           <li><a href="./famosos.html">Famosos</a></li>
           <li><a href="./resenyas.html">Reseñas</a></li>
           <li><a href="./reservas.html">Reserva</a></li>
@@ -34,52 +40,127 @@
         </ul>
       </nav>
     </header>
-    <section class="min-h-[100vh] px-3 pb-10">
+    <section class="min-h-[100vh] px-3 pb-10 md:min-h-auto">
       <div class="h-auto border-y border-gray-500 p-5">
-        <p class="font-bold text-4xl text-center">Servicios</p>
+        <p class="font-bold text-4xl text-center lg:text-6xl">Servicios</p>
       </div>
       <div>
         <div
           id="servicio_01"
-          class="mt-10 flex flex-row items-center gap-4 bg-blue-300 rounded-lg p-4 sombra-caja-azul"
+          class="mt-10 flex flex-row items-center gap-4 md:justify-around bg-blue-300 rounded-lg p-4 sombra-caja-azul lg:hover:bg-white"
         >
           <img
             src="./imgs/domicilio.jpg"
-            class="rounded-full size-36 object-cover"
+            class="rounded-full size-36 object-cover lg:size-48"
           />
-          <p class="text-[1.2rem]">Pedir a domicilio</p>
+          <p class="text-[1.2rem] md:text-2xl lg:text-4xl">Pedir a domicilio</p>
+          <p class="text-[1.2rem] w-[60%] hidden lg:block">
+            En nuestro restaurante te lo ponemos fácil: disfruta de tus platos
+            favoritos sin salir de casa. Ofrecemos un servicio de comida a
+            domicilio rápido y cómodo, preparado al momento con ingredientes de
+            calidad y entregado con el máximo cuidado para que llegue a tu mesa
+            en perfectas condiciones. Tú eliges, nosotros cocinamos y te lo
+            llevamos.
+          </p>
         </div>
         <div
           id="servicio_02"
-          class="mt-10 flex flex-row items-center gap-4 bg-blue-300 rounded-lg p-4 sombra-caja-azul derecha"
+          class="mt-10 flex flex-row items-center gap-4 md:justify-between bg-blue-300 rounded-lg p-4 sombra-caja-azul derecha lg:hover:bg-white"
         >
           <img
             src="./imgs/celebracion.jpg"
-            class="rounded-full size-36 object-cover"
+            class="rounded-full size-36 object-cover lg:size-48"
           />
-          <p class="text-[1.2rem]">Celebraciones privadas</p>
+          <p class="text-[1.2rem] md:text-2xl lg:text-4xl">
+            Celebraciones privadas
+          </p>
+          <p class="text-[1.2rem] w-[60%] hidden lg:block">
+            En nuestro restaurante hacemos de cada ocasión un momento especial.
+            Disponemos de espacios y menús adaptados para celebraciones privadas
+            como cumpleaños, reuniones familiares o eventos especiales. Nos
+            encargamos de cada detalle para que tú solo te preocupes de
+            disfrutar con los tuyos.
+          </p>
         </div>
         <div
           id="servicio_03"
-          class="mt-10 flex flex-row items-center gap-4 bg-blue-300 rounded-lg p-4 sombra-caja-azul"
+          class="mt-10 flex flex-row items-center gap-4 md:justify-between bg-blue-300 rounded-lg p-4 sombra-caja-azul lg:hover:bg-white"
         >
           <img
             src="./imgs/degustacion.jpg"
-            class="rounded-full size-36 object-cover"
+            class="rounded-full size-36 object-cover lg:size-48"
           />
-          <p class="text-[1.2rem]">Menú degustación</p>
+          <p class="text-[1.2rem] md:text-2xl lg:text-4xl">Menú degustación</p>
+          <p class="text-[1.2rem] w-[60%] hidden lg:block">
+            Nuestro menú degustación es una experiencia pensada para los amantes
+            de la buena mesa. Una cuidada selección de platos que combina
+            tradición y creatividad, elaborados con ingredientes de primera
+            calidad, para que disfrutes de un recorrido gastronómico único en
+            cada bocado.
+          </p>
         </div>
         <div
           id="servicio_03"
-          class="mt-10 flex flex-row items-center gap-4 bg-blue-300 rounded-lg p-4 sombra-caja-azul derecha"
+          class="mt-10 flex flex-row items-center gap-4 md:justify-between bg-blue-300 rounded-lg p-4 sombra-caja-azul derecha lg:hover:bg-white"
         >
           <img
             src="./imgs/parrilladas.jpg"
-            class="rounded-full size-36 object-cover"
+            class="rounded-full size-36 object-cover lg:size-48"
           />
-          <p class="text-[1.2rem]">Parrilladas para grupos</p>
+          <p class="text-[1.2rem] md:text-2xl lg:text-4xl">
+            Parrilladas para grupos
+          </p>
+          <p class="text-[1.2rem] w-[60%] hidden lg:block">
+            Nuestra parrillada para grupos es la opción perfecta para compartir
+            y disfrutar. Una variada selección de carnes a la brasa,
+            acompañamientos y sabores auténticos, ideal para comidas entre
+            amigos, familiares o celebraciones, en un ambiente acogedor y
+            distendido.
+          </p>
         </div>
       </div>
     </section>
+    <footer
+      class="min-h-[15vh] bg-blue-300 w-full flex flex-row p-5 md:px-12 lg:px-20"
+    >
+      <div class="w-[70vw]">
+        <ul
+          class="flex flex-wrap gap-3 md:gap-6 text-[0.8rem] md:text-base lg:text-xl h-full items-center"
+        >
+          <li class="hover:text-white"><a href="./home.html">Inicio</a></li>
+          <li class="hover:text-white active">
+            <a href="./servicios.html">Servicios</a>
+          </li>
+          <li class="hover:text-white"><a href="./famosos.html">Famosos</a></li>
+          <li class="hover:text-white">
+            <a href="./resenyas.html">Reseñas</a>
+          </li>
+          <li class="hover:text-white">
+            <a href="./reservas.html">Reservas</a>
+          </li>
+          <li class="hover:text-white"><a href="./menu.html">Menú</a></li>
+        </ul>
+      </div>
+      <div class="flex gap-4 md:gap-6 items-center w-[30vw] justify-end">
+        <a
+          href="https://twitter.com"
+          class="text-2xl md:text-4xl hover:text-blue-400"
+        >
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a
+          href="https://instagram.com"
+          class="text-2xl md:text-4xl hover:text-pink-500"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a
+          href="https://youtube.com"
+          class="text-2xl md:text-4xl hover:text-red-500"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
