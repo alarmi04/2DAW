@@ -324,11 +324,22 @@ Una vez dentro procedemos a seguir los siguientes pasos:
                         ('consola_Xbox', 'Xbox'),
                         ('consola_Switch', 'Switch'),
                         ('consola_PC', 'PC')
-                    ] string = "Consola")```
+                        ] string = "Consola")```
                 - `precioBase = fields.Float()`
                 - `unidades = fields.Integer()`
                 - ```estado = fields.Selection([
                         ('estado_Nuevo', 'Nuevo'),
                         ('estado_Segunda', 'Segunda mano')
-                    ] string = "Estado del videojuego")``` 
-                - `descuento = fields.Boolean()` 
+                        ] string = "Estado del videojuego")``` 
+                - `descuento = fields.Boolean()`
+            - Para crear un campo calculado hacemos lo siguientte:
+                1. Creamos el campo  y le asociamos una función:
+                    ```
+                    valor_stock = fields.Float(string='Valor del stock', compute='_compute_valor_stock')```
+                2. Creamos la función, pasandole dos parametros:
+                    ```
+                    @api.depends('precio_base', 'unidades')
+                    def _compute_valor_stock(self):
+                        for record in self:
+                            record.valor_stock = record.precio_base * record.unidades
+                    ```
