@@ -1,0 +1,68 @@
+:root {
+  --ancho-total: 980px;
+  --tam-fuente: 20px;
+  --fuente: Georgia, "Times New Roman", Times, serif;
+  --color-fondo-header: #fabf84;
+  --color-fondo-footer: #fa8684;
+  --color-fondo-menu: #faee84;
+  --color-fondo-cont: #84faf8;
+  --color-fondo-lat: #c384fa;
+  --color-borde-verde: #86fa84;
+      --color-fondo-body: #FCFCC7;
+}
+
+* {
+  margin: 0;
+}
+
+body{
+  background-color: var(--color-fondo-body);
+}
+
+#page {
+  width: var(--ancho-total);
+  margin: 0 auto;
+  background-color: var(--color-borde-verde);
+}
+
+p {
+  font-size: var(--tam-fuente);
+  font-family: var(--fuente);
+  text-align: center;
+}
+
+header {
+  background-color: var(--color-fondo-header);
+  width: 100%;
+  float: left;
+  padding: 20px 0px;
+}
+
+#menu {
+  float: left;
+  height: 200px;
+  line-height: 150px;
+  width: 150px;
+  background-color: var(--color-fondo-menu);
+}
+
+#contenidos {
+  float: left;
+  height: 500px;
+  width: 650px;
+  background-color: var(--color-fondo-cont);
+  line-height: 500px;
+}
+
+#lateral {
+  float: left;
+  height: 500px;
+  width: 180px;
+  line-height: 500px;
+  background-color: var(--color-fondo-lat);
+}
+
+footer {
+  clear: both; /* Hago que los efectos de float desaparezcan para que se ponga debajo */
+  background-color: var(--color-fondo-footer);
+}

@@ -1,0 +1,430 @@
+:root {
+  --ancho-total: 1920px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+#section1,
+#section2,
+#section3,
+#section4,
+#section5,
+#logo,
+nav,
+nav ul li,
+#botones,
+#botones button,
+#caja2_portada,
+.mini_caja1,
+.mini_caja2,
+.mini_caja3,
+.mini_caja4,
+.mini_caja5,
+.mini_caja6,
+#section2_caja1,
+#section2_caja2,
+.mini_caja1_section2,
+.mini_caja2_section2,
+#section3_caja1,
+#section3_caja2,
+.mini_caja1_section3,
+.mini_caja2_section3,
+.mini_caja3_section3,
+.mini_caja1_section4,
+.mini_caja1_section4,
+.mini_caja2_section4,
+.card,
+.card_caja1,
+.card_caja2,
+.card_caja3,
+.card_cont,
+#caja1_section5,
+.caja1_cont,
+#caja2_section5,
+.mini_caja_cont,
+.cajita,
+.cajita2,
+#mega_caja_section5,
+#seccion1_cajas_section5,
+#seccion2_cajas_section5,
+.mini_caja_section5,
+.mini_caja2_section5,
+footer,
+#footer_caja1,
+#footer_caja2,
+#footer_mini_caja1,
+#footer_mini_caja2 {
+  outline: solid 2px black;
+}
+
+#page {
+  width: var(--ancho-total);
+}
+
+header {
+  height: 100px;
+}
+
+#logo {
+  margin-top: 30px;
+  width: 100px;
+  height: 34px;
+  float: left;
+}
+
+nav {
+  margin-top: 30px;
+  height: 30px;
+  width: 685px;
+  float: right;
+  margin-right: 120px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+ul {
+  margin-left: 10px;
+}
+
+ul li {
+  margin-top: 7px;
+  margin-right: 50px;
+  float: left;
+  list-style-type: none;
+}
+
+#botones {
+  width: 297px;
+  line-height: 30px;
+  float: left;
+  padding-left: 50px;
+}
+
+#botones button {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100px;
+}
+
+/*==============PORTADA===============*/
+
+#section1 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
+
+#caja1_portada {
+  width: 50%;
+  float: left;
+  height: 100%;
+}
+
+#caja1_portada > * {
+  margin-top: 10px;
+}
+
+.mini_caja1 {
+  margin-left: 30px;
+  width: 300px;
+  height: 30px;
+}
+
+.mini_caja2 {
+  margin-left: 30px;
+  width: 600px;
+  height: 60px;
+}
+
+.mini_caja3 {
+  margin-left: 30px;
+  width: 600px;
+  height: 60px;
+}
+
+.mini_caja4 {
+  height: 60px;
+  width: 220px;
+  margin-left: 30px;
+}
+
+.mini_caja5 {
+  height: 60px;
+  width: 180px;
+  margin-left: 30px;
+  float: left;
+}
+
+.mini_caja6 {
+  height: 60px;
+  width: 180px;
+  float: left;
+}
+
+#caja2_portada {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+/*================SECTION=2==============*/
+
+#section2 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
+
+#section2_caja1 {
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+#section2_caja2 {
+  width: 60%;
+  height: 100%;
+  float: left;
+}
+
+.mini_caja1_section2 {
+  margin-left: 250px;
+  margin-top: 160px;
+  width: 350px;
+  height: 150px;
+}
+
+.mini_caja2_section2 {
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-top: 40px;
+  width: 630px;
+  height: 50px;
+}
+
+/*================SECTION=3===============*/
+
+#section3 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
+
+#section3_caja1 {
+  width: 60%;
+  height: 100%;
+  float: left;
+}
+
+#section3_caja2 {
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.mini_caja1_section3 {
+  margin-left: 250px;
+  margin-top: 200px;
+  width: 580px;
+  height: 150px;
+}
+
+.mini_caja2_section3 {
+  margin-left: 250px;
+  margin-top: 40px;
+  width: 580px;
+  height: 50px;
+}
+
+.mini_caja3_section3 {
+  margin-left: 250px;
+  margin-top: 40px;
+  width: 200px;
+  height: 50px;
+}
+
+/*=====================SECTION=4======================*/
+
+#section4 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
+
+#caja1_section4 {
+  height: 10%;
+}
+
+.mini_caja1_section4 {
+  margin-left: 30px;
+  height: 60%;
+  width: 600px;
+}
+
+.mini_caja2_section4 {
+  margin-left: 30px;
+  height: 20%;
+  margin-top: 10px;
+  width: 380px;
+}
+
+.card {
+  width: 30%;
+  height: 80%;
+  float: left;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.card_cont {
+  height: 80%;
+  width: 100%;
+}
+
+.card_cont2 {
+  height: 20%;
+  width: 100%;
+}
+
+.card_caja1 {
+  margin-top: 5px;
+  width: 98.7%;
+  margin-left: 3px;
+  height: 15px;
+}
+
+.card_caja2 {
+  width: 98.7%;
+  height: 30px;
+  margin-left: 3px;
+  margin-top: 5px;
+}
+
+.card_caja3 {
+  width: 20%;
+  margin-left: 3px;
+  height: 15px;
+  margin-top: 5px;
+}
+
+/*===================SECTION=5====================*/
+
+#section5 {
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
+
+#caja1_section5 {
+  height: 40%;
+  width: 100%;
+  padding-top: 50px; /* En lugar de margin-top en el hijo */
+}
+
+.caja1_cont {
+  padding-top: 10px;
+  padding-left: 570px;
+  margin-left: 100px;
+  width: 57%;
+  height: 60%;
+}
+
+#caja2_section5 {
+  height: 51%;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.mini_caja_cont {
+  width: 500px;
+  height: 88%;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.cajita {
+  width: 97%;
+  height: 30%;
+}
+
+.cajita2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 97%;
+  height: 15%;
+}
+
+#mega_caja_section5 {
+  width: 95%;
+  height: 95%;
+  margin-left: 50px;
+}
+
+#seccion1_cajas_section5 {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+#seccion2_cajas_section5 {
+  float: left;
+  width: 40%;
+  height: 100%;
+}
+
+.mini_caja_section5 {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 97%;
+  height: 22%;
+}
+
+.mini_caja2_section5 {
+  width: 97%;
+  height: 22%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+/*====FOOTER====*/
+
+footer {
+  clear: both;
+  width: 100%;
+  height: 150px;
+  padding-top: 10px;
+}
+
+#footer_caja1 {
+  height: 5px;
+  width: 97%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#footer_caja2 {
+  width: 97%;
+  margin-top: 10px;
+  height: 70%;
+  margin-left: 10px;
+}
+
+#footer_mini_caja1 {
+  float: left;
+  width: 20%;
+  height: 70%;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#footer_mini_caja2 {
+  float: right;
+  width: 20%;
+  height: 70%;
+  margin-top: 10px;
+  margin-right: 10px;
+}

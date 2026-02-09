@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | InterRed Servicios de Red</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <header>
+        <div class="logo_div">
+          <img src="./imagenes/logo-interred-c03.svg" class="logo" />
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="./index.html">INICIO</a></li>
+            <li><a href="./nosotros.html">NOSOTROS</a></li>
+            <li><a href="./servicios.html">SERVICIOS</a></li>
+            <li><a href="./webs.html">WEBS</a></li>
+            <li><a href="./contacto.html" class="active">CONTACTO</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="servicios_boton">
+        <p class="servicios_boton_p01">¡ Escríbenos !</p>
+        <p class="servicios_boton_p02">Estamos listos para ayudarte</p>
+      </section>
+      <section class="contacto_s01">
+        <p class="contacto_s01_p01">Formulario de contacto</p>
+        <form action="#" method="post" class="contacto_s01_form">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Introduce tu nombre"
+              required
+            />
+          </div>
+          <div class="campo">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Introduce tu email"
+            />
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea
+              name="mensaje"
+              id="mensaje"
+              placeholder="Introduce tu mensaje"
+            ></textarea>
+          </div>
+          <div class="campo_botones">
+            <button type="submit" class="enviar_button">Enviar</button>
+            <button type="reset" class="limpiar_button">Limpiar</button>
+          </div>
+        </form>
+        <p class="contacto_s01_p02">Detalles de contacto</p>
+        <p class="contacto_s01_p03">
+          Este sitio web es una simulación a modo de demostración que utiliza
+          diseño adaptable (responsive). Este diseño junto con los cambios
+          necesarios se podría realizar perfectamente para una empresa o
+          negocio.
+        </p>
+        <p class="contacto_s01_p03">
+          Todos los servicios detallados en esta web de simulación se pueden
+          realizar también. Si estas interesado en uno o más servicios, por
+          favor, ponte en contacto conmigo a través de este formulario.
+        </p>
+        <p class="contacto_s01_p03 gracias">Muchas Gracias!!!</p>
+      </section>
+
+      <a href="#" class="enlaceSubir">
+        <i class="fa-solid fa-arrow-up flechaSubir"></i>
+      </a>
+      <footer>
+        <p>2025 © INTERRED Todos los derechos reservados</p>
+        <div>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-square-youtube"></i>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

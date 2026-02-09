@@ -1,0 +1,67 @@
+:root {
+  --tam-fuente: 20px;
+  --fuente: Georgia, "Times New Roman", Times, serif;
+  --color-fondo-header: #fabf84;
+  --color-fondo-nav: #faee84;
+  --color-fondo-info: #84faf8;
+  --color-fondo-barra: #c384fa;
+  --color-fondo-footer: #fa8684;
+  --color-fondo-body: #fcfcc7;
+  --ancho-total: 980px;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-fondo-body);
+}
+
+#page {
+  width: var(--ancho-total);
+  margin: 0 auto;
+}
+
+header {
+  background-color: var(--color-fondo-header);
+  width: 100%;
+  float: left;
+  padding: 20px 0px;
+}
+
+p {
+  font-size: var(--tam-fuente);
+  font-family: var(--fuente);
+  text-align: center;
+}
+
+nav {
+  background-color: var(--color-fondo-nav);
+  text-align: center;
+}
+
+#content {
+  height: 500px;
+}
+
+#info {
+  float: left; /* Hago que flote a la izquierda para luego poner la barra al lado */
+  height: 100%;
+  line-height: 500px;
+  background-color: var(--color-fondo-info);
+  width: 750px;
+}
+
+#barra-lateral {
+  float: left; /* Pongo la barra al lado de la info */
+  height: 100%;
+  line-height: 500px;
+  background-color: var(--color-fondo-barra);
+  width: 230px;
+}
+
+footer {
+  clear: both; /* Hago que los efectos de float desaparezcan para que se ponga debajo */
+  background-color: var(--color-fondo-footer);
+}

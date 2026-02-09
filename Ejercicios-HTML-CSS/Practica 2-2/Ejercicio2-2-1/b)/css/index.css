@@ -1,0 +1,66 @@
+:root {
+    --tam-fuente: 20px;
+    --fuente: Georgia, 'Times New Roman', Times, serif;
+    --color-fondo-header: #fabf84; 
+    --color-fondo-nav: #FAEE84;
+    --color-fondo-info: #84FAF8;
+    --color-fondo-barra: #C384FA;
+    --color-fondo-footer: #FA8684;
+    --color-fondo-body: #FCFCC7;
+    --ancho-total: 980px;
+    --altura-contenido: 500px;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: var(--color-fondo-body);
+}
+
+#page {
+    width: var(--ancho-total);
+    margin: 0 auto;
+}
+
+header {
+  background-color: var(--color-fondo-header);
+  width: 100%; /* Para que ocupe el ancho del contenedor padre */
+  padding: 20px 0px;
+}
+
+p {
+  font-size: var(--tam-fuente);
+  font-family: var(--fuente);
+  text-align: center;
+}
+
+nav {
+    background-color: var(--color-fondo-nav);
+    text-align: center;
+}
+
+#content {
+    height: var(--altura-contenido);
+}
+
+#info {
+    display: inline-block; /* Pongo inline-block para que info y la barra esten en la misma linea pero respetando las medidas del ocntenedor padre.*/
+    height: 100%;   
+    line-height: var(--altura-contenido);
+    background-color: var(--color-fondo-info);
+    width: 750px;
+}
+
+#barra-lateral {
+    display: inline-block; /* Pongo inline-block para que info y la barra esten en la misma linea pero respetando las medidas del ocntenedor padre.*/
+    height: 100%;
+    line-height: var(--altura-contenido); /*Pongo line-height a los mismos pixeles que la altura para que la linea de texto ocupe lo mismo y se ponga solo en el medio*/
+    background-color: var(--color-fondo-barra);
+    width: 230px;
+}
+
+footer {
+    background-color: var(--color-fondo-footer);
+}

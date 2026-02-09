@@ -1,0 +1,105 @@
+:root {
+  --ancho-total: 100%;
+  --color-titulos: rgb(255, 255, 255);
+  --fuente: Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#page {
+  width: var(--ancho-total);
+  max-width: 1920px;
+  max-height: 1080px;
+  margin: 0 auto;
+  height: 85vh;
+}
+
+p {
+  font-family: var(--fuente);
+  color: var(--color-titulos);
+  text-align: center;
+}
+
+header {
+  background-color: rgb(2, 122, 2);
+}
+
+header ul li {
+  font-family: var(--fuente);
+  color: var(--color-titulos);
+  display: inline-block;
+  list-style-type: none;
+  cursor: default;
+}
+
+header {
+  line-height: 10vh;
+  height: 10vh;
+  text-align: center;
+}
+
+aside {
+  float: left;
+  width: 25%;
+  background-color: rgb(42, 159, 205);
+  height: 100%;
+}
+
+aside ul li {
+  font-family: var(--fuente);
+  color: var(--color-titulos);
+  list-style-type: none;
+  cursor: default;
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 30px;
+}
+
+aside ul {
+  margin-top: 20%;
+}
+
+main {
+  float: left;
+  width: 75%;
+  height: 100%;
+  background-color: rgb(202, 38, 202);
+}
+
+footer {
+  clear: both;
+  background-color: rgb(244, 100, 65);
+}
+
+footer p {
+  text-transform: uppercase;
+}
+
+.contenedor {
+  border: 5px solid rgb(255, 0, 0);
+  width: 95%;
+  height: 44%;
+  margin: 2vh 2vh 0vh 2vh;
+}
+
+.mini-contenedor {
+  float: left;
+  width: 44.2%;
+  border: 5px solid rgb(0, 0, 255);
+  height: 75%;
+  margin-top: 4vh;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.mini-contenedor-2 {
+  float: left;
+  width: 30%;
+  border: 5px solid rgb(0, 0, 255);
+  height: 75%;
+  margin-left: 1%;
+  margin-top: 3%;
+}

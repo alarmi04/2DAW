@@ -1,0 +1,82 @@
+.datos ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.datos ul li {
+  display: inline;
+  margin: 0;
+}
+
+.datos ul li::after {
+  content: "; ";
+}
+
+@media screen and (min-width: 600px) {
+  section {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75em;
+  }
+  .datos {
+    width: 20%;
+  }
+  .desc_cont {
+    width: 80%;
+  }
+  .datos ul {
+    list-style: disc;
+    padding-left: 2em;
+  }
+  .datos ul li {
+    display: list-item;
+  }
+  .datos ul li::after {
+    content: none;
+  }
+
+  .cont ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 0.75em;
+  }
+
+  .cont ul li {
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+body {
+    padding-left: 8em;
+    padding-right: 8em;
+}
+  section {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .desc_cont {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+  .desc {
+    width: 50%;
+  }
+
+  .cont {
+    width: 50%;
+  }
+
+  .cont ul {
+    display: list-item;
+    gap: 0.75em;
+  }
+  .cont ul li {
+    list-style: disc;
+    width: 100%;
+  }
+}
